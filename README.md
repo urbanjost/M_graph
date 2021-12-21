@@ -10,10 +10,13 @@
    making a simple XY plot from Fortran with a simple call. May
    use something else or just rewrite.
 
+   requires fpm(1)
+
 
 ## LIST OF PROCEDURES
    + graph ! generate a basic xy plot
 
+<!--
 ## BUILDING THE MODULE USING make(1) ![gmake](docs/images/gnu.gif)
      git clone https://github.com/urbanjost/M_graph.git
      cd M_graph/src
@@ -33,6 +36,7 @@
 
 This will compile the Fortran module and basic example
 program that exercise the routine.
+-->
 
 ## BUILD and TEST with FPM ![-](docs/images/fpm_logo.gif)
 
