@@ -1,0 +1,10 @@
+'mainpage.txt
+/**
+         @mainpage M_graph Fortran Library
+
+         @section Introduction
+
+     M_graph - Fortran module for creating basic XY plots
+
+         @image html html/images/sort.gif
+*/'

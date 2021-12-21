@@ -1,0 +1,35 @@
+# TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
+name = "M_graph"
+version = "1.0.0"
+license = "Public Domain"
+author = ["John S. Urban"]
+maintainer = "urbanjost@comcast.com"
+copyright = "Copyright 2021, John S. Urban"
+description = "module to produce a basic XY plot"
+categories = ["graphics", "XY plot", "XY graph"]
+keywords = ["fortran", "graphics", "plot" ]
+homepage = "https://github.com/urbanjost/M_graph.git"
+
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+
+[install]
+#library = true
+[dependencies]
+   M_draw = { git = "https://github.com/urbanjost/M_draw.git" }
+
+[[executable]]
+   name="graph"
+   source-dir="app"
+   main="graph.f90"
+   [executable.dependencies]
+   M_CLI2 = { git = "https://github.com/urbanjost/M_CLI2.git" }
+
+[[test]]
+name="test_suite_M_graph"
+source-dir="test"
+main="test_suite_M_graph.f90"
+[test.dependencies]
+M_msg = { git = "https://github.com/urbanjost/M_msg.git" }
