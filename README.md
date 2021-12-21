@@ -1,11 +1,15 @@
 ## NAME
-   M_graph(3f) - a module for generating a basic XY plot
+   M_graph(3f) - a module for generating a basic XY plot (WIP)
    (LICENSE:PD)
 ## SYNOPSIS
 ```text
        use M_graph, only : graph
 ```
 ## DESCRIPTION
+   A WIP(Work In Progress), `MAYBE`. Looking at alternatives for
+   making a simple XY plot from Fortran with a simple call. May
+   use something else or just rewrite.
+
 
 ## LIST OF PROCEDURES
    + graph ! generate a basic xy plot
