@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="generate basic XY plots">
+    
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>demo_graph &ndash; M_graph</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">M_graph </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>demo_graph
+    <small>Program</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="48.5% of total for programs.">176 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/graph.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/graph.f90.html'>graph.f90</a></li>
+    
+  
+     <li class="active">demo_graph</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-c~2">C</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-f">F</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-nc">NC</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-nf">NF</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-numlines">NUMLINES</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-numpts">NUMPTS</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x">X</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y">Y</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-device">device</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-error_bar_option">error_bar_option</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-error_bar_size">error_bar_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-fontname">fontname</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-grid">grid</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-h">h</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-i20">i20</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-i60">i60</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-i70">i70</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-ixsize">ixsize</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-iysize">iysize</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-ndl~2">ndl</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-ndp~2">ndp</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-status~3">status</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_connect">symbol_connect</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_nth">symbol_nth</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_size">symbol_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_start">symbol_start</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-t">t</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-top_title_size">top_title_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-view">view</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-w">w</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_label_size">x_axis_label_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_length">x_axis_length</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_number_orientation">x_axis_number_orientation</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_label_size">y_axis_label_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_length">y_axis_length</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_number_orientation">y_axis_number_orientation</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/demo_graph.html#proc-readargs">readargs</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/demo_graph.html#src">demo_graph</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>M_draw</li>
+    
+    <li><a href='../module/m_graph.html'>m_graph</a></li>
+    
+    <li>M_msg</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      </ul>
+    </div>
+    
+
+    <p>call voutput(str(filename,&rsquo;_&rsquo;,int(a),&rsquo;x&rsquo;,int(b),&rsquo;.&rsquo;,device,sep=&rsquo;&lsquo;))</p>
+    
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-c~2">C</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-f">F</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-nc">NC</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-nf">NF</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-numlines">NUMLINES</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-numpts">NUMPTS</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x">X</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y">Y</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-device">device</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-error_bar_option">error_bar_option</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-error_bar_size">error_bar_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-fontname">fontname</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-grid">grid</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-h">h</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-i20">i20</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-i60">i60</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-i70">i70</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-ixsize">ixsize</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-iysize">iysize</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-ndl~2">ndl</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-ndp~2">ndp</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-status~3">status</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_connect">symbol_connect</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_nth">symbol_nth</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_size">symbol_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_start">symbol_start</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-t">t</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-top_title_size">top_title_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-view">view</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-w">w</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_label_size">x_axis_label_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_length">x_axis_length</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_number_orientation">x_axis_number_orientation</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_label_size">y_axis_label_size</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_length">y_axis_length</a>
+      
+      <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_number_orientation">y_axis_number_orientation</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/demo_graph.html#proc-readargs">readargs</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/demo_graph.html#src">demo_graph</a>
+  </div>
+</div>
+
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+
+     
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-c~2"></span>character(len=80)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>C</strong>(NUMLINES+3)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-f"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>F</strong>(NF)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nc"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>NC</strong>(NUMLINES+3)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nf"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>NF</strong></td><td> =</td><td>255</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-numlines"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>NUMLINES</strong></td><td> =</td><td>3</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-numpts"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>NUMPTS</strong></td><td> =</td><td>25</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>X</strong>(NUMPTS)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>Y</strong>(NUMPTS,NUMLINES)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-device"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>device</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-error_bar_option"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>error_bar_option</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-error_bar_size"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>error_bar_size</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fontname"></span>character(len=80)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>fontname</strong></td><td> =</td><td>'roman'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-grid"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>grid</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-h"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>h</strong></td><td> =</td><td>.false.</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i20"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>i20</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i60"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>i60</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i70"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>i70</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ixsize"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ixsize</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iysize"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>iysize</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ndl~2"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ndl</strong></td><td></td><td></td><td><p>character(len=:),allocatable :: filename</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ndp~2"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ndp</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-status~3"></span>character(len=:),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>status</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-symbol_connect"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>symbol_connect</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-symbol_nth"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>symbol_nth</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-symbol_size"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>symbol_size</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-symbol_start"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>symbol_start</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-t"></span>character(len=80)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>t</strong></td><td> =</td><td>'title'</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-top_title_size"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>top_title_size</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-view"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>view</strong>(3)</td><td> =</td><td>[0.0, 0.0, 0.0]</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-w"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>w</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_axis_label_size"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>x_axis_label_size</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_axis_length"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>x_axis_length</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_axis_number_orientation"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>x_axis_number_orientation</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y_axis_label_size"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>y_axis_label_size</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y_axis_length"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>y_axis_length</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y_axis_number_orientation"></span>real</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>y_axis_number_orientation</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-readargs"></span><h3>
+subroutine <a href='../proc/readargs.html'>readargs</a>(status)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>something where you could restrict nml output to just listed names would be nice
+write(<em>,nml=args)[&lsquo;A&rsquo;,&rsquo;H&rsquo;]
+write(</em>,nml=*NML)args[&lsquo;A&rsquo;,&rsquo;H&rsquo;]</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=:),</td>
+  <td>intent(out),</td>
+  <td></td>
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>status</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    
+    
+    
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">PROGRAM </span><span class="n">demo_graph</span>
+<span class="k">use </span><span class="n">m_graph</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">graph</span><span class="p">,</span> <span class="n">graph_init</span>
+<span class="k">use </span><span class="n">M_draw</span>
+<span class="k">use </span><span class="n">M_msg</span><span class="p">,</span>   <span class="k">only</span> <span class="p">:</span> <span class="n">str</span>
+<span class="k">implicit none</span>
+
+<span class="kt">integer</span><span class="p">,</span><span class="k">PARAMETER</span>            <span class="kd">::</span> <span class="n">NUMLINES</span><span class="o">=</span><span class="mi">3</span>
+<span class="kt">integer</span><span class="p">,</span><span class="k">PARAMETER</span>            <span class="kd">::</span> <span class="n">NUMPTS</span><span class="o">=</span><span class="mi">25</span>
+<span class="kt">integer</span><span class="p">,</span><span class="k">PARAMETER</span>            <span class="kd">::</span> <span class="n">NF</span><span class="o">=</span><span class="mi">255</span>
+<span class="kt">REAL</span>                         <span class="kd">::</span> <span class="n">X</span><span class="p">(</span><span class="n">NUMPTS</span><span class="p">),</span><span class="n">Y</span><span class="p">(</span><span class="n">NUMPTS</span><span class="p">,</span><span class="n">NUMLINES</span><span class="p">)</span>
+<span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>            <span class="kd">::</span> <span class="n">C</span><span class="p">(</span><span class="n">NUMLINES</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="kt">INTEGER</span>                      <span class="kd">::</span> <span class="n">NC</span><span class="p">(</span><span class="n">NUMLINES</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="kt">REAL</span>                         <span class="kd">::</span> <span class="n">F</span><span class="p">(</span><span class="n">NF</span><span class="p">)</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>            <span class="kd">::</span> <span class="n">device</span>
+<span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">ixsize</span>
+<span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">iysize</span>
+<span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">i20</span><span class="p">,</span> <span class="n">i60</span><span class="p">,</span> <span class="n">i70</span>
+<span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">ndp</span>
+<span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">ndl</span>
+<span class="c">!!character(len=:),allocatable :: filename</span>
+<span class="kt">integer</span>                      <span class="kd">::</span> <span class="n">w</span>
+<span class="c">! create a NAMELIST group with lots of options</span>
+<span class="kt">real</span> <span class="kd">::</span> <span class="n">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">]</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span> <span class="kd">::</span> <span class="n">t</span><span class="o">=</span><span class="s1">&#39;title&#39;</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span> <span class="kd">::</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;roman&#39;</span>
+<span class="kt">logical</span> <span class="kd">::</span> <span class="n">h</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">grid</span>                       <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span><span class="n">grid</span><span class="p">)</span>                       <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">grid</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">symbol_connect</span>             <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">symbol_connect</span><span class="p">)</span>             <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_connect</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">symbol_nth</span>                 <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="n">symbol_nth</span><span class="p">)</span>                 <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_nth</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">symbol_size</span>                <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">12</span><span class="p">),</span><span class="n">symbol_size</span><span class="p">)</span>                <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_size</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">symbol_start</span>               <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span><span class="n">symbol_start</span><span class="p">)</span>               <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_start</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">error_bar_option</span>           <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span><span class="n">error_bar_option</span><span class="p">)</span>           <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">error_bar_option</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">error_bar_size</span>             <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span><span class="n">error_bar_size</span><span class="p">)</span>             <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">error_bar_size</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">x_axis_number_orientation</span>  <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">31</span><span class="p">),</span><span class="n">x_axis_number_orientation</span><span class="p">)</span>  <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">x_axis_number_orientation</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">y_axis_number_orientation</span>  <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="n">y_axis_number_orientation</span><span class="p">)</span>  <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">y_axis_number_orientation</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">x_axis_length</span>              <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">21</span><span class="p">),</span><span class="n">x_axis_length</span><span class="p">)</span>              <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">x_axis_length</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">y_axis_length</span>              <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span><span class="n">y_axis_length</span><span class="p">)</span>              <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">y_axis_length</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">x_axis_label_size</span>          <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">39</span><span class="p">),</span><span class="n">x_axis_label_size</span><span class="p">)</span>          <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">x_axis_label_size</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">y_axis_label_size</span>          <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span><span class="n">y_axis_label_size</span><span class="p">)</span>          <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">y_axis_label_size</span>
+<span class="kt">real</span>  <span class="kd">::</span>  <span class="n">top_title_size</span>             <span class="p">;</span>  <span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">41</span><span class="p">),</span><span class="n">top_title_size</span><span class="p">)</span>             <span class="p">;</span>  <span class="k">namelist</span>  <span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">top_title_size</span>
+<span class="k">namelist</span> <span class="o">/</span><span class="n">args</span><span class="o">/</span> <span class="n">view</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">fontname</span><span class="p">,</span><span class="n">f</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">status</span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+   <span class="n">device</span><span class="o">=</span><span class="s1">&#39;x11&#39;</span>
+   <span class="n">ixsize</span><span class="o">=</span><span class="mi">1200</span><span class="o">*</span><span class="p">.</span><span class="mi">75</span><span class="o">*</span><span class="mf">0.5</span>
+   <span class="n">iysize</span><span class="o">=</span><span class="mi">900</span><span class="o">*</span><span class="p">.</span><span class="mi">75</span><span class="o">*</span><span class="mf">0.5</span>
+   <span class="n">w</span><span class="o">=</span><span class="mi">40</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;x11&#39;</span><span class="p">)</span><span class="k">then</span>
+<span class="k">      call </span><span class="n">prefposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">prefsize</span><span class="p">(</span><span class="n">ixsize</span><span class="p">,</span><span class="n">iysize</span><span class="p">)</span>
+   <span class="k">else</span>
+<span class="k">      call </span><span class="n">prefsize</span><span class="p">(</span><span class="n">ixsize</span><span class="p">,</span><span class="n">iysize</span><span class="p">)</span>
+      <span class="c">!!call voutput(str(filename,&#39;_&#39;,int(a),&#39;x&#39;,int(b),&#39;.&#39;,device,sep=&#39;&#39;))</span>
+   <span class="k">endif</span>
+<span class="k">   call </span><span class="n">vinit</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+   <span class="k">call </span><span class="n">vsetflush</span><span class="p">(.</span><span class="n">false</span><span class="p">.)</span>
+   <span class="k">call </span><span class="n">vflush</span><span class="p">()</span>
+   <span class="k">call </span><span class="n">linewidth</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+<span class="c">!     FILL SOME ARRAYS WITH DATA WE CAN PLOT</span>
+   <span class="k">DO </span><span class="n">i20</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span>
+      <span class="n">X</span><span class="p">(</span><span class="n">i20</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span>
+      <span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mf">5.0</span>
+      <span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span><span class="o">*</span><span class="mi">2</span><span class="mf">0.0</span>
+      <span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">i20</span><span class="o">/</span><span class="mf">4.0</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+   <span class="k">enddo</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+   <span class="n">f</span><span class="o">=</span><span class="mf">0.0</span> <span class="c">!     ZERO OUT OPTION ARRAY</span>
+<span class="c">!     SET UP COLOR AND LINETYPE IN OPTION ARRAY</span>
+   <span class="k">DO </span><span class="n">I70</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span><span class="n">NF</span><span class="p">,</span><span class="mi">2</span>
+      <span class="n">F</span><span class="p">(</span><span class="n">I70</span><span class="p">)</span><span class="o">=</span><span class="nb">mod</span><span class="p">(</span><span class="n">i70</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+      <span class="n">F</span><span class="p">(</span><span class="n">I70</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="nb">mod</span><span class="p">(</span><span class="n">i70</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+   <span class="k">enddo</span>
+<span class="k">   </span><span class="n">f</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span>
+   <span class="n">f</span><span class="p">(</span><span class="mi">53</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+   <span class="n">NDP</span><span class="o">=</span><span class="n">NUMPTS</span><span class="c">! number of data points per line</span>
+   <span class="n">NDL</span><span class="o">=</span><span class="mi">3</span>     <span class="c">! number of data lines</span>
+   <span class="c">!C        ! array of strings dimensioned C(3+NUMPTS)</span>
+   <span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;X-AXIS&#39;</span>  <span class="c">!  c(1) : x axis title</span>
+   <span class="n">C</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;Y-AXIS&#39;</span>  <span class="c">!  c(2) : y axis title</span>
+   <span class="n">C</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;TITLE&#39;</span>  <span class="c">!  c(3) : top title</span>
+   <span class="n">C</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 1&#39;</span>  <span class="c">!  c(n) : line N-3 legend (optionally used)</span>
+   <span class="n">C</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 2&#39;</span>  <span class="c">!  c(n) : line N-3 legend (optionally used)</span>
+   <span class="n">C</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 3&#39;</span>  <span class="c">!  c(n) : line N-3 legend (optionally used)</span>
+   <span class="c">!NC       ! array of string lengths in c() dimensioned nc(3+NUMPTS)</span>
+   <span class="k">DO </span><span class="n">I60</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span>
+      <span class="n">NC</span><span class="p">(</span><span class="n">I60</span><span class="p">)</span><span class="o">=</span><span class="nb">LEN_TRIM</span><span class="p">(</span><span class="n">C</span><span class="p">(</span><span class="n">I60</span><span class="p">))</span>
+   <span class="k">enddo</span>
+   <span class="c">!f(39)= 0.25</span>
+   <span class="c">!f(40)= 0.25</span>
+   <span class="c">!f(42)= 3.00</span>
+   <span class="c">!f(43)=-1.00</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+<span class="c">!  INITIALIZE GRAPHICS</span>
+   <span class="k">call </span><span class="n">graph_init</span><span class="p">(</span><span class="mi">1</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+   <span class="n">INFINITE</span><span class="p">:</span> <span class="k">do</span>
+<span class="k">      CALL </span><span class="n">graph</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">NDP</span><span class="p">,</span><span class="n">NDL</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">NC</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">vflush</span><span class="p">()</span>
+<span class="mi">888</span>   <span class="k">continue</span>
+<span class="k">      call </span><span class="n">readargs</span><span class="p">(</span><span class="n">status</span><span class="p">)</span> <span class="c">! interactively change NAMELIST group</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">      call </span><span class="n">vflush</span><span class="p">()</span>              <span class="c">! flush graphics buffers</span>
+      <span class="k">call </span><span class="n">color</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">clear</span><span class="p">()</span>
+      <span class="k">call </span><span class="n">color</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">vflush</span><span class="p">()</span>              <span class="c">! flush graphics buffers</span>
+   <span class="k">enddo </span><span class="n">INFINITE</span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="mi">999</span> <span class="k">continue</span>
+<span class="k">   call </span><span class="n">vflush</span><span class="p">()</span>              <span class="c">! flush graphics buffers</span>
+   <span class="k">call </span><span class="n">vexit</span><span class="p">()</span>               <span class="c">! close up plot package</span>
+<span class="k">contains</span>
+<span class="k">   subroutine </span><span class="n">readargs</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">status</span>
+      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span> <span class="kd">::</span> <span class="n">line</span>
+      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span> <span class="kd">::</span> <span class="n">answer</span>
+      <span class="kt">integer</span>            <span class="kd">::</span> <span class="n">lun</span>
+      <span class="kt">integer</span>            <span class="kd">::</span> <span class="n">ios</span>
+      <span class="n">status</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+      <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="s1">&#39;args&gt;&gt; &quot;.&quot; to run, &quot;stop&quot; to end, &quot;show&quot; to show keywords&#39;</span>
+      <span class="k">do</span>
+<span class="k">         write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="s1">&#39;args&gt;&gt;&#39;</span>
+         <span class="k">read</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="n">line</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">line</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;!&#39;</span><span class="p">)</span><span class="k">cycle</span>
+<span class="k">         select case</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+            <span class="k">exit</span>
+<span class="k">          case</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>
+            <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;SO FAR&#39;</span>
+            <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="n">nml</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+            <span class="c">!! something where you could restrict nml output to just listed names would be nice</span>
+            <span class="c">!!write(*,nml=args)[&#39;A&#39;,&#39;H&#39;]</span>
+            <span class="c">!!write(*,nml=*NML)args[&#39;A&#39;,&#39;H&#39;]</span>
+          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;sh&#39;</span><span class="p">)</span>
+             <span class="k">call </span><span class="nb">execute_command_line</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">)</span>
+          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;read&#39;</span><span class="p">)</span>
+             <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="s1">&#39;filename:&#39;</span>
+             <span class="k">read</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="n">answer</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">answer</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">lun</span><span class="p">)</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             read</span><span class="p">(</span><span class="n">lun</span><span class="p">,</span><span class="n">args</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+             <span class="k">close</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">lun</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+          <span class="k">case</span><span class="p">(</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span>
+            <span class="n">status</span><span class="o">=</span><span class="s1">&#39;stop&#39;</span>
+            <span class="k">exit</span>
+<span class="k">          case</span><span class="p">(</span><span class="s1">&#39;write&#39;</span><span class="p">)</span>
+             <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="s1">&#39;filename:&#39;</span>
+             <span class="k">read</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="n">answer</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">answer</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">lun</span><span class="p">)</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             write</span><span class="p">(</span><span class="n">lun</span><span class="p">,</span><span class="n">args</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+             <span class="k">close</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">lun</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+          <span class="k">case </span><span class="n">default</span>
+            <span class="n">UPDATE</span><span class="p">:</span> <span class="k">block</span>
+<span class="k">               </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">intmp</span>
+               <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">message</span>
+               <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ios</span>
+               <span class="n">intmp</span><span class="o">=</span><span class="s1">&#39;&amp;ARGS &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;/&#39;</span>
+               <span class="k">read</span><span class="p">(</span><span class="n">intmp</span><span class="p">,</span><span class="n">nml</span><span class="o">=</span><span class="n">args</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="n">iomsg</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
+               <span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">                  write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;ERROR:&#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+               <span class="k">endif</span>
+<span class="k">            endblock </span><span class="n">UPDATE</span>
+         <span class="k">end select</span>
+<span class="k">      enddo</span>
+<span class="k">   end subroutine </span><span class="n">readargs</span>
+<span class="k">end program </span><span class="n">demo_graph</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>M_graph was developed by John S. Urban<br>&copy; 2021 
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-12-21 20:38  
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>
