@@ -267,7 +267,7 @@ end subroutine graph_table
 !==================================================================================================================================!
 !>
 !!##NAME
-!!    graph(3) - [M_graph] Draw an XY graph
+!!    graph(3) - [M_graph::INTRO] Draw an XY graph
 !!##SYNOPSIS
 !!
 !!    subroutine graph(x,y,ndp,ndl,f,c,nc)
