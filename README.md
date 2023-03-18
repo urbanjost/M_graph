@@ -1,14 +1,14 @@
-## NAME
+## Name
    M_graph(3f) - a module for generating a basic XY plot (WIP)
    (LICENSE:PD)
-## SYNOPSIS
+## Synopsis
 ```text
     use M_graph, only : plot
     use M_graph, only : graph_init
     ! depricated
     use M_graph, only : graph
 ```
-## DESCRIPTION
+## Description
    A WIP(Work In Progress), `MAYBE`. Looking at alternatives for
    making a simple XY plot from Fortran with a simple call. May
    use something else or just rewrite.
@@ -19,13 +19,13 @@
 
    requires fpm(1)
 
-## LIST OF PROCEDURES
+## List of Procedures
    + graph_init ! set up display area
    + graph      ! generate a basic xy plot
    + plot       ! generate a basic xy plot
 
 <!--
-## BUILDING THE MODULE USING make(1) ![gmake](docs/images/gnu.gif)
+## Building the Module using make(1) ![gmake](docs/images/gnu.gif)
      git clone https://github.com/urbanjost/M_graph.git
      cd M_graph/src
      # change Makefile if not using one of the listed compilers
@@ -46,7 +46,7 @@ This will compile the Fortran module and basic example
 program that exercise the routine.
 -->
 
-## BUILD and TEST with FPM ![-](docs/images/fpm_logo.gif)
+## Build and TesT with FPM ![-](docs/images/fpm_logo.gif)
 
    Alternatively, download the github repository and build it with
    fpm ( as described at [Fortran Package Manager](https://github.com/fortran-lang/fpm) )
@@ -54,8 +54,8 @@ program that exercise the routine.
    ```bash
         git clone https://github.com/urbanjost/M_graph.git
         cd M_graph
-        fpm run
-        fpm run --example
+        fpm run "*"
+        fpm run --example "*"
         fpm test
    ```
 
@@ -66,10 +66,10 @@ program that exercise the routine.
         M_graph        = { git = "https://github.com/urbanjost/M_graph.git" }
 ```
 
-## DOCUMENTATION
+## Documentation   ![docs](docs/images/docs.gif)
 
-### USER
-![manpages](docs/images/manpages.gif)
+### User
+![man-pages](docs/images/manpages.gif)
    - There are man-pages in the repository download in the docs/ directory
      that may be installed on ULS (Unix-Like Systems).
 
@@ -86,15 +86,15 @@ program that exercise the routine.
 
    - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
 
-### DEVELOPER
+### Developer
    - [ford(1) output](https://urbanjost.github.io/M_graph/fpm-ford/index.html).
    - [doxygen(1) output](https://urbanjost.github.io/M_graph/doxygen_out/html/index.html).
    - [github action status](docs/STATUS.md) 
 ---
-## PEDIGREE
+## Pedigree
  Based on the public domain library liblong.
 
-## REFERENCES ![-](docs/images/ref.gif)
+## References ![-](docs/images/ref.gif)
 
    * [](https://en.wikipedia.org/wiki/)
 ---
