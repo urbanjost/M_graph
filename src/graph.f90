@@ -42,8 +42,8 @@ namelist /args/ view,t,h,fontname,f
 character(len=:),allocatable :: status
 !-----------------------------------------------------------------------------------------------------------------------------------
    device='x11'
-   ixsize=1200*.75*0.5
-   iysize=900*.75*0.5
+   ixsize=1200*.75
+   iysize=900*.75
    w=40
    if(device.eq.'x11')then
       call prefposition(0,0)
