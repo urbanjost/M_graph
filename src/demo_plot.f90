@@ -3,6 +3,8 @@ use M_draw,  only : prefposition, prefsize, vinit, vsetflush, linewidth, vflush,
 use M_graph, only : graph_init, plot
 real                         :: x(25),y(25,3)
 integer                      :: i
+integer                      :: idum
+integer                      :: ixsize, iysize
 type(plot)                   :: plt
    !  fill some arrays with data we can plot
    do i=1,25

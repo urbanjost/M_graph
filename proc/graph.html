@@ -336,6 +336,7 @@
 <div class="codehilite"><pre><span></span><code><span class="nv">program</span> <span class="nv">demo_graph</span>
 <span class="nv">use</span> <span class="nv">m_graph</span>, <span class="nv">only</span> : <span class="nv">graph</span>, <span class="nv">graph_init</span>
 <span class="nv">use</span> <span class="nv">M_draw</span>
+<span class="nv">implicit</span> <span class="nv">none</span>
 
 <span class="nv">integer</span>,<span class="nv">parameter</span>            :: <span class="nv">numlines</span><span class="o">=</span><span class="mi">3</span>
 <span class="nv">integer</span>,<span class="nv">parameter</span>            :: <span class="nv">numpts</span><span class="o">=</span><span class="mi">25</span>
@@ -348,7 +349,9 @@
 <span class="nv">integer</span>                      :: <span class="nv">ixsize</span>
 <span class="nv">integer</span>                      :: <span class="nv">iysize</span>
 <span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=</span>:<span class="ss">)</span>,<span class="nv">allocatable</span> :: <span class="nv">filename</span>
-<span class="nv">integer</span>                      :: <span class="nv">w</span>
+<span class="nv">integer</span>                      :: <span class="nv">w</span>, <span class="nv">ndl</span>, <span class="nv">ndp</span>
+<span class="nv">integer</span>                      :: <span class="nv">i20</span>, <span class="nv">i70</span>, <span class="nv">i60</span>, <span class="nv">indx</span>
+<span class="nv">real</span>                         :: <span class="nv">value</span>
    <span class="nv">device</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">x11</span><span class="s1">&#39;</span>
    <span class="nv">ixsize</span><span class="o">=</span><span class="mi">1200</span><span class="o">*</span>.<span class="mi">75</span><span class="o">*</span><span class="mi">0</span>.<span class="mi">5</span>
    <span class="nv">iysize</span><span class="o">=</span><span class="mi">900</span><span class="o">*</span>.<span class="mi">75</span><span class="o">*</span><span class="mi">0</span>.<span class="mi">5</span>
@@ -406,14 +409,14 @@
       <span class="k">call</span> <span class="nl">vflush</span><span class="ss">()</span>
 <span class="mi">888</span>   <span class="k">continue</span>
       <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">Enter index and value for graph(3f) option array:</span><span class="s1">&#39;</span>
-      <span class="nv">read</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span>,<span class="k">end</span><span class="o">=</span><span class="mi">999</span>,<span class="nv">err</span><span class="o">=</span><span class="mi">888</span><span class="ss">)</span><span class="nv">index</span>,<span class="nv">value</span>
-      <span class="k">if</span><span class="ss">(</span><span class="nv">index</span>.<span class="nv">lt</span>.<span class="mi">1</span><span class="ss">)</span><span class="k">then</span>
+      <span class="nv">read</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span>,<span class="k">end</span><span class="o">=</span><span class="mi">999</span>,<span class="nv">err</span><span class="o">=</span><span class="mi">888</span><span class="ss">)</span><span class="nv">indx</span>,<span class="nv">value</span>
+      <span class="k">if</span><span class="ss">(</span><span class="nv">indx</span>.<span class="nv">lt</span>.<span class="mi">1</span><span class="ss">)</span><span class="k">then</span>
          <span class="k">exit</span> <span class="nv">INFINITE</span>
-      <span class="k">elseif</span><span class="ss">(</span><span class="nv">index</span>.<span class="nv">gt</span>.<span class="nv">nf</span><span class="ss">)</span><span class="k">then</span>
+      <span class="k">elseif</span><span class="ss">(</span><span class="nv">indx</span>.<span class="nv">gt</span>.<span class="nv">nf</span><span class="ss">)</span><span class="k">then</span>
          <span class="k">goto</span> <span class="nl">888</span>
       <span class="k">else</span>
-         <span class="nv">f</span><span class="ss">(</span><span class="nv">index</span><span class="ss">)</span><span class="o">=</span><span class="nv">value</span>
-         <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">index </span><span class="s1">&#39;</span>,<span class="nv">index</span>,<span class="s1">&#39;</span><span class="s"> now </span><span class="s1">&#39;</span>,<span class="nv">value</span>
+         <span class="nv">f</span><span class="ss">(</span><span class="nv">indx</span><span class="ss">)</span><span class="o">=</span><span class="nv">value</span>
+         <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">indx </span><span class="s1">&#39;</span>,<span class="nv">indx</span>,<span class="s1">&#39;</span><span class="s"> now </span><span class="s1">&#39;</span>,<span class="nv">value</span>
       <span class="k">endif</span>
       <span class="k">call</span> <span class="nl">vflush</span><span class="ss">()</span>              <span class="o">!</span> <span class="nv">flush</span> <span class="nv">graphics</span> <span class="nv">buffers</span>
       <span class="k">call</span> <span class="nl">color</span><span class="ss">(</span><span class="mi">7</span><span class="ss">)</span>
@@ -602,7 +605,7 @@
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span><span class="k">SUBROUTINE </span><span class="n">graph</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">NDP</span><span class="p">,</span><span class="n">NDL</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">NC</span><span class="p">)</span><span class="w"></span>
 
-<span class="c">! ident_1=&quot;@(#)M_graph::graph(3f): routine for plotting lines&quot;</span>
+<span class="c">! ident_1=&quot;@(#) M_graph graph(3f) routine for plotting lines&quot;</span>
 
 <span class="c">!</span>
 <span class="c">!     X  (R) X input array dimensioned X(NDP,NDL)</span>
@@ -926,6 +929,7 @@
 <span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">49</span><span class="p">).</span><span class="n">gt</span><span class="p">.</span><span class="mf">0.0</span><span class="p">)</span><span class="w"> </span><span class="n">glen</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span><span class="w">  </span><span class="c">! LEGEND LINE LENGTH</span>
 <span class="w">   </span><span class="n">jtcntr</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w">                  </span><span class="c">! CENTER TITLE,0=YES,-1=LEFT,1=RIGHT</span>
 <span class="w">   </span><span class="n">jszref</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">51</span><span class="p">)</span><span class="w">                  </span><span class="c">! SHOW ZERO REFERENCE,0=NO,1=YES</span>
+<span class="w">   </span><span class="n">zref</span><span class="o">=</span><span class="mf">0.0</span><span class="w"></span>
 <span class="c">!</span>
 <span class="w">   </span><span class="n">jline</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span><span class="w">                   </span><span class="c">! USE LINE TYPES,0=NO,1=YES</span>
 <span class="w">   </span><span class="n">jcol</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="mi">53</span><span class="p">)</span><span class="w">                    </span><span class="c">! USE COLORS,0=NO,1=YES</span>
@@ -1421,7 +1425,6 @@
 <span class="c">!CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
 <span class="c">!     FINISH UP</span>
 <span class="w">   </span><span class="k">call </span><span class="n">move_</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">)</span><span class="w">   </span><span class="c">!PEN UP</span>
-<span class="w">   </span><span class="k">return</span>
 <span class="k">end subroutine </span><span class="n">graph</span><span class="w"></span>
 </pre></div>
 
@@ -1443,7 +1446,7 @@
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-03-18 09:55              </p>
+ on 2023-04-13 00:30              </p>
           </div>
         </div>
         <br>

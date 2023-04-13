@@ -1,6 +1,7 @@
      program demo_graph
      use m_graph, only : graph, graph_init
      use M_draw
+     implicit none
 
      integer,parameter            :: numlines=3
      integer,parameter            :: numpts=25
@@ -13,7 +14,9 @@
      integer                      :: ixsize
      integer                      :: iysize
      character(len=:),allocatable :: filename
-     integer                      :: w
+     integer                      :: w, ndl, ndp
+     integer                      :: i20, i70, i60, indx
+     real                         :: value
         device='x11'
         ixsize=1200*.75*0.5
         iysize=900*.75*0.5
@@ -71,14 +74,14 @@
            call vflush()
      888   continue
            write(*,*)'Enter index and value for graph(3f) option array:'
-           read(*,*,end=999,err=888)index,value
-           if(index.lt.1)then
+           read(*,*,end=999,err=888)indx,value
+           if(indx.lt.1)then
               exit INFINITE
-           elseif(index.gt.nf)then
+           elseif(indx.gt.nf)then
               goto 888
            else
-              f(index)=value
-              write(*,*)'index ',index,' now ',value
+              f(indx)=value
+              write(*,*)'indx ',indx,' now ',value
            endif
            call vflush()              ! flush graphics buffers
            call color(7)

@@ -436,6 +436,7 @@ end subroutine graph_table
 !!    program demo_graph
 !!    use m_graph, only : graph, graph_init
 !!    use M_draw
+!!    implicit none
 !!
 !!    integer,parameter            :: numlines=3
 !!    integer,parameter            :: numpts=25
@@ -448,7 +449,9 @@ end subroutine graph_table
 !!    integer                      :: ixsize
 !!    integer                      :: iysize
 !!    character(len=:),allocatable :: filename
-!!    integer                      :: w
+!!    integer                      :: w, ndl, ndp
+!!    integer                      :: i20, i70, i60, indx
+!!    real                         :: value
 !!       device='x11'
 !!       ixsize=1200*.75*0.5
 !!       iysize=900*.75*0.5
@@ -506,14 +509,14 @@ end subroutine graph_table
 !!          call vflush()
 !!    888   continue
 !!          write(*,*)'Enter index and value for graph(3f) option array:'
-!!          read(*,*,end=999,err=888)index,value
-!!          if(index.lt.1)then
+!!          read(*,*,end=999,err=888)indx,value
+!!          if(indx.lt.1)then
 !!             exit INFINITE
-!!          elseif(index.gt.nf)then
+!!          elseif(indx.gt.nf)then
 !!             goto 888
 !!          else
-!!             f(index)=value
-!!             write(*,*)'index ',index,' now ',value
+!!             f(indx)=value
+!!             write(*,*)'indx ',indx,' now ',value
 !!          endif
 !!          call vflush()              ! flush graphics buffers
 !!          call color(7)
@@ -535,7 +538,7 @@ end subroutine graph_table
 !!                 Version 3.0 Wed Jun 12 10:34:11 MDT 1996
 SUBROUTINE graph(X,Y,NDP,NDL,F,C,NC)
 
-! ident_1="@(#)M_graph::graph(3f): routine for plotting lines"
+! ident_1="@(#) M_graph graph(3f) routine for plotting lines"
 
 !
 !     X  (R) X input array dimensioned X(NDP,NDL)
@@ -859,6 +862,7 @@ real     :: zval
    if (f(49).gt.0.0) glen=f(49)  ! LEGEND LINE LENGTH
    jtcntr=f(50)                  ! CENTER TITLE,0=YES,-1=LEFT,1=RIGHT
    jszref=f(51)                  ! SHOW ZERO REFERENCE,0=NO,1=YES
+   zref=0.0
 !
    jline=f(52)                   ! USE LINE TYPES,0=NO,1=YES
    jcol=f(53)                    ! USE COLORS,0=NO,1=YES
@@ -1354,7 +1358,6 @@ real     :: zval
 !CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 !     FINISH UP
    call move_(0.,0.)   !PEN UP
-   return
 end subroutine graph
 !==================================================================================================================================!
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
@@ -1419,7 +1422,7 @@ subroutine graph_init(xmax0,ymax0,vpx,vpy,zom)
 !     FORTRAN-77 VERSION:   DGL JULY, 1987
 use M_draw
 
-! ident_2="@(#)M_graph::graph_init(3f): initialize the longlib graphics plot package"
+! ident_2="@(#) M_graph graph_init(3f) initialize the longlib graphics plot package"
 
 real,intent(in)   :: xmax0
 real,intent(in)   :: ymax0
@@ -1942,7 +1945,7 @@ SUBROUTINE symbol_(X,Y,S,T,A,NN,IS)
 !        1. THE FUNCTION IBITS(I,J,K) RETURNS THE VALUE OF THE BITS
 !           IN I STARTING AT J FOR K BITS.
 
-! ident_3="@(#)M_graph::symbol_(3f): routine to plot characters and symbols"
+! ident_3="@(#) M_graph symbol_(3f) routine to plot characters and symbols"
 
 real                :: X
 real                :: Y
@@ -3181,7 +3184,7 @@ END FUNCTION inbox_
 !==================================================================================================================================!
 SUBROUTINE clipit_(IVTB,XV2,YV2,AV1,AV2,XM,YM,XX,YX)
 !
-! ident_4="@(#)M_graph::clipit(3f):clips a line segment partially visible"
+! ident_4="@(#) M_graph clipit(3f) clips a line segment partially visible"
 !
 real    :: av1
 real    :: av2
