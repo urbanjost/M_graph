@@ -198,7 +198,6 @@ integer             :: nc(size(yy,dim=2)+3)
 integer,parameter   :: nf=255
 real                :: f(nf)
 integer             :: i
-integer             :: ii
    ndp=size(xx)
    ndl=size(yy,dim=2)
    call default()
