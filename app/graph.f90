@@ -1,7 +1,7 @@
 PROGRAM demo_graph
 use m_graph, only : graph, graph_init
 use M_draw
-use M_msg,   only : str
+!x!use M_msg,   only : str
 implicit none
 
 integer,PARAMETER            :: NUMLINES=3
@@ -50,7 +50,7 @@ character(len=:),allocatable :: status
       call prefsize(ixsize,iysize)
    else
       call prefsize(ixsize,iysize)
-      !!call voutput(str(filename,'_',int(a),'x',int(b),'.',device,sep=''))
+      !x!call voutput(str(filename,'_',int(a),'x',int(b),'.',device,sep=''))
    endif
    call vinit(device)
    call vsetflush(.false.)
