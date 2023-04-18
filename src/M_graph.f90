@@ -2,7 +2,6 @@
 !()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()!
 !==================================================================================================================================!
 module m_graph
-use M_verify, only : debug
 implicit none
 private
 public   graph_init
@@ -28,6 +27,8 @@ private  translate_
 private  trs_
 private  viewport_
 private  width_
+!-----------------------------------------------------------------------------------------------------------------------------------
+logical,save :: debug=.false.
 !-----------------------------------------------------------------------------------------------------------------------------------
 ! plot coordinate system
 real,save    :: TRANSLATEXQ                ! TRANSLATEXQ  SCALED ROTATED ORIGIN X VALUE
@@ -880,10 +881,10 @@ real     :: zval
    if (jxauto.ge.0) then  ! AUTO SCALE X
       x1=abs(xm)
       x2=x1
-      do 5 i=1,np
+      do i=1,np
          k=1
          if (jxuse.ne.0) k=nl
-         do 5 j=1,k,nbar
+         do j=1,k,nbar
             xm=min(xm,x(i,j))
             x1=min(x1,abs(x(i,j)))
             xx=max(xx,x(i,j))
@@ -898,7 +899,8 @@ real     :: zval
                xx=max(xx,x(i,j)+x(i+2,j))
                x2=max(x2,abs(x(i,j)+x(i+1,j)))
             endif
-5     continue
+         enddo
+      enddo
       if (jxlog.ne.0) then
          xm=alog10(x1+1.e-34)
          xx=alog10(x2+1.e-34)
@@ -923,8 +925,8 @@ real     :: zval
    if (jyauto.ge.0) then  ! AUTO SCALE Y
       y1=abs(ym)
       y2=y1
-      do 6 i=1,np
-         do 6 j=1,nl,nbar
+      do i=1,np
+         do j=1,nl,nbar
             ym=min(ym,y(i,j))
             y1=min(y1,abs(y(i,j)))
             yx=max(yx,y(i,j))
@@ -939,7 +941,8 @@ real     :: zval
                yx=max(yx,y(i,j)+y(i+2,j))
                y2=max(y2,abs(y(i,j)+y(i+1,j)))
             endif
-6     continue
+         enddo
+      enddo
       if (jylog.ne.0) then
          ym=alog10(y1+1.e-34)
          yx=alog10(y2+1.e-34)
@@ -970,10 +973,10 @@ real     :: zval
 !
 !CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
    if (jcol.ne.0) then  ! INITIALIZE COLOR AXIS ARRAY
-      do 10 i=1,4
+      do i=1,4
          ic(i)=abs(f(2*i+icoff-2))
          if (ic(i).eq.0) ic(i)=1
-10    continue
+      enddo
    endif
 !CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
    if (jline.ne.0) call newpen_(int(f(iloff)))
@@ -1048,10 +1051,10 @@ real     :: zval
 !     PRODUCE PLOT Y AXIS
 !
    if (jcol.ne.0) then  ! INITIALIZE COLOR AXIS ARRAY
-      do 20 i=1,4
+      do i=1,4
          ic(i)=abs(f(2*i+icoff+6))
          if (ic(i).eq.0) ic(i)=1
-20    continue
+      enddo
    endif
 !CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 !     PRODUCE PLOT Y AXIS
@@ -1197,7 +1200,7 @@ real     :: zval
       call draw_(xlen,zref)
    endif
 !
-   do 100 i=1,nl,nbar
+   do i=1,nl,nbar
       if (jline.ne.0) call newpen_(int(f(2*(i-1)+iloff+12)))
       if (jcol.ne.0) then
          icc=int(abs(f(icoff+24+2*(i-1))))
@@ -1210,7 +1213,7 @@ real     :: zval
 !
       ipen=3
       if (jconn.eq.0) then
-         do 50 j=1,np
+         do j=1,np
             if (jxuse.ne.0) then
                x1=x(j,i)
             else
@@ -1223,14 +1226,14 @@ real     :: zval
             y1=(y1-ym)*dy
             call plot_(x1,y1,ipen)
             ipen=2
-50       continue
+         enddo
       endif
 !
 !     ANOTHER PASS FOR SYMBOLS, ETC.
 !
-      if (jconn.ne.0.and.jebar.eq.0.and.jvline.eq.0 .and.jsym.eq.0) goto 100
+      if (jconn.ne.0.and.jebar.eq.0.and.jvline.eq.0 .and.jsym.eq.0) cycle
       isym=0
-      do 60 j=1,np
+      do j=1,np
          if (jxuse.ne.0) then
             x1=x(j,i)
          else
@@ -1315,14 +1318,14 @@ real     :: zval
             call draw_(x1,y1)
          endif
          isym=isym+1
-60    continue
-100 continue
+      enddo
+    enddo
 !CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 !     ADD LEGEND
 !
    if (jlegnd.ne.0) then
       if(debug)write(*,*)'20) ADD LEGEND'
-      do 200 i=1,nl
+      do i=1,nl
          x1=xleg+csleg*1.5
          y1=yleg+(i-1)*csleg*1.5+csleg*0.5
          if (jcol.ne.0) then
@@ -1352,7 +1355,7 @@ real     :: zval
             endif
             call symbol_(x1,y1,csleg, c(i+3),0.,nc(i+3),-1)
          endif
-200   continue
+      enddo
    endif
 !CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 !     FINISH UP
@@ -1585,13 +1588,13 @@ real               :: ytemp1
 !#######################################################################
 !     DECODE COMMAND
 !
-      DO 30 I30=1,NSELECT
+      DO I30=1,NSELECT
          IF (ISELECT.EQ.IDECODE(I30))THEN
 !                  1,2,3, 0,-2,-3,5,10,11,999,4,-4,6,7,8,12,13
       if(debug)write(*,*)'*_plot_* ',xplot0,yplot0,iselect,i30,idecode(i30)
              GOTO (1,2,3,50,22,33,5,10,11,999,4, 4,6,7,8,12,13),I30
          ENDIF
-30    CONTINUE
+      enddo
       WRITE(*,*)'# *PLOT* UNEXPECTED SELECTION ',ISELECT
       RETURN
 !     NO LONGER SETTING RESOLUTION AND CONVERTING UNITS TO INTEGERS
@@ -1763,10 +1766,9 @@ real               :: ytemp1
       WRITE(*,*)'#PAUSING -- click "n" on plot'
       CALL VFLUSH()              ! flush graphics buffers
       WRITE(*,*)CHAR(7)          ! send bell character
-      do 110 I110=1,1000 ! flush key buffer
-         IF(CHECKKEY().EQ.0)GOTO 111
-110   CONTINUE
-111   CONTINUE
+      do I110=1,1000 ! flush key buffer
+         IF(CHECKKEY().EQ.0)exit
+      enddo
       IVALUE=GETKEY()     ! wait till keypress is read in graphic window
       CALL VFLUSH()
       RETURN
@@ -1776,10 +1778,9 @@ real               :: ytemp1
       WRITE(*,*)'#PAUSING -- click "n" on plot'
       CALL VFLUSH()              ! flush graphics buffers
       WRITE(*,*)CHAR(7)          ! send bell character
-      do 130 I130=1,1000 ! flush key buffer
-         IF(CHECKKEY().EQ.0)GOTO 131
-130   CONTINUE
-131   CONTINUE
+      do I130=1,1000 ! flush key buffer
+         IF(CHECKKEY().EQ.0)exit
+      enddo
       IVALUE=GETKEY()     ! wait till keypress is read in graphic window
       CALL VFLUSH()
       if(debug)write(*,*)'vflush'

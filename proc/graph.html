@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="87.7% of total for procedures.">625 statements</a>
+               title="87.7% of total for procedures.">627 statements</a>
           </li>
 
             <li id="source-file">
@@ -948,10 +948,10 @@
 <span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jxauto</span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">! AUTO SCALE X</span>
 <span class="w">      </span><span class="n">x1</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">xm</span><span class="p">)</span><span class="w"></span>
 <span class="w">      </span><span class="n">x2</span><span class="o">=</span><span class="n">x1</span><span class="w"></span>
-<span class="w">      </span><span class="k">do </span><span class="mi">5</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
 <span class="w">         </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
 <span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jxuse</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">nl</span><span class="w"></span>
-<span class="w">         </span><span class="k">do </span><span class="mi">5</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">nbar</span><span class="w"></span>
+<span class="w">         </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">nbar</span><span class="w"></span>
 <span class="w">            </span><span class="n">xm</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">xm</span><span class="p">,</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="w"></span>
 <span class="w">            </span><span class="n">x1</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)))</span><span class="w"></span>
 <span class="w">            </span><span class="n">xx</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="w"></span>
@@ -966,7 +966,8 @@
 <span class="w">               </span><span class="n">xx</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="w"></span>
 <span class="w">               </span><span class="n">x2</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">)))</span><span class="w"></span>
 <span class="w">            </span><span class="k">endif</span>
-<span class="mi">5</span><span class="w">     </span><span class="k">continue</span>
+<span class="k">         enddo</span>
+<span class="k">      enddo</span>
 <span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">jxlog</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">         </span><span class="n">xm</span><span class="o">=</span><span class="n">alog10</span><span class="p">(</span><span class="n">x1</span><span class="o">+</span><span class="mf">1.e-34</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="n">xx</span><span class="o">=</span><span class="n">alog10</span><span class="p">(</span><span class="n">x2</span><span class="o">+</span><span class="mf">1.e-34</span><span class="p">)</span><span class="w"></span>
@@ -991,8 +992,8 @@
 <span class="k">   if</span><span class="w"> </span><span class="p">(</span><span class="n">jyauto</span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">! AUTO SCALE Y</span>
 <span class="w">      </span><span class="n">y1</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">ym</span><span class="p">)</span><span class="w"></span>
 <span class="w">      </span><span class="n">y2</span><span class="o">=</span><span class="n">y1</span><span class="w"></span>
-<span class="w">      </span><span class="k">do </span><span class="mi">6</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
-<span class="w">         </span><span class="k">do </span><span class="mi">6</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nl</span><span class="p">,</span><span class="n">nbar</span><span class="w"></span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
+<span class="w">         </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nl</span><span class="p">,</span><span class="n">nbar</span><span class="w"></span>
 <span class="w">            </span><span class="n">ym</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">ym</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="w"></span>
 <span class="w">            </span><span class="n">y1</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)))</span><span class="w"></span>
 <span class="w">            </span><span class="n">yx</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">yx</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="w"></span>
@@ -1007,7 +1008,8 @@
 <span class="w">               </span><span class="n">yx</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">yx</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="w"></span>
 <span class="w">               </span><span class="n">y2</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">)))</span><span class="w"></span>
 <span class="w">            </span><span class="k">endif</span>
-<span class="mi">6</span><span class="w">     </span><span class="k">continue</span>
+<span class="k">         enddo</span>
+<span class="k">      enddo</span>
 <span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">jylog</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">         </span><span class="n">ym</span><span class="o">=</span><span class="n">alog10</span><span class="p">(</span><span class="n">y1</span><span class="o">+</span><span class="mf">1.e-34</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="n">yx</span><span class="o">=</span><span class="n">alog10</span><span class="p">(</span><span class="n">y2</span><span class="o">+</span><span class="mf">1.e-34</span><span class="p">)</span><span class="w"></span>
@@ -1038,10 +1040,10 @@
 <span class="c">!</span>
 <span class="c">!CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
 <span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jcol</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">! INITIALIZE COLOR AXIS ARRAY</span>
-<span class="w">      </span><span class="k">do </span><span class="mi">10</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="w"></span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="w"></span>
 <span class="w">         </span><span class="n">ic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">icoff</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="w"></span>
 <span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ic</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
-<span class="mi">10</span><span class="w">    </span><span class="k">continue</span>
+<span class="w">      </span><span class="k">enddo</span>
 <span class="k">   endif</span><span class="w"></span>
 <span class="c">!CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
 <span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jline</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">newpen_</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">iloff</span><span class="p">)))</span><span class="w"></span>
@@ -1116,10 +1118,10 @@
 <span class="c">!     PRODUCE PLOT Y AXIS</span>
 <span class="c">!</span>
 <span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jcol</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">! INITIALIZE COLOR AXIS ARRAY</span>
-<span class="w">      </span><span class="k">do </span><span class="mi">20</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="w"></span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="w"></span>
 <span class="w">         </span><span class="n">ic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">icoff</span><span class="o">+</span><span class="mi">6</span><span class="p">))</span><span class="w"></span>
 <span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ic</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ic</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
-<span class="mi">20</span><span class="w">    </span><span class="k">continue</span>
+<span class="w">      </span><span class="k">enddo</span>
 <span class="k">   endif</span><span class="w"></span>
 <span class="c">!CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
 <span class="c">!     PRODUCE PLOT Y AXIS</span>
@@ -1265,7 +1267,7 @@
 <span class="w">      </span><span class="k">call </span><span class="n">draw_</span><span class="p">(</span><span class="n">xlen</span><span class="p">,</span><span class="n">zref</span><span class="p">)</span><span class="w"></span>
 <span class="w">   </span><span class="k">endif</span><span class="w"></span>
 <span class="c">!</span>
-<span class="w">   </span><span class="k">do </span><span class="mi">100</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nl</span><span class="p">,</span><span class="n">nbar</span><span class="w"></span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nl</span><span class="p">,</span><span class="n">nbar</span><span class="w"></span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jline</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">newpen_</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">iloff</span><span class="o">+</span><span class="mi">12</span><span class="p">)))</span><span class="w"></span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jcol</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">         </span><span class="n">icc</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">icoff</span><span class="o">+</span><span class="mi">24</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))))</span><span class="w"></span>
@@ -1278,7 +1280,7 @@
 <span class="c">!</span>
 <span class="w">      </span><span class="n">ipen</span><span class="o">=</span><span class="mi">3</span><span class="w"></span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jconn</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<span class="k">         do </span><span class="mi">50</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
+<span class="k">         do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jxuse</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">               </span><span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="k">else</span>
@@ -1291,14 +1293,14 @@
 <span class="w">            </span><span class="n">y1</span><span class="o">=</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">ym</span><span class="p">)</span><span class="o">*</span><span class="n">dy</span><span class="w"></span>
 <span class="w">            </span><span class="k">call </span><span class="n">plot_</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">ipen</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="n">ipen</span><span class="o">=</span><span class="mi">2</span><span class="w"></span>
-<span class="mi">50</span><span class="w">       </span><span class="k">continue</span>
+<span class="w">         </span><span class="k">enddo</span>
 <span class="k">      endif</span><span class="w"></span>
 <span class="c">!</span>
 <span class="c">!     ANOTHER PASS FOR SYMBOLS, ETC.</span>
 <span class="c">!</span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jconn</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mf">0.</span><span class="nb">and</span><span class="p">.</span><span class="n">jebar</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mf">0.</span><span class="nb">and</span><span class="p">.</span><span class="n">jvline</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="n">jsym</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
-<span class="w">      </span><span class="n">isym</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
-<span class="w">      </span><span class="k">do </span><span class="mi">60</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jconn</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mf">0.</span><span class="nb">and</span><span class="p">.</span><span class="n">jebar</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mf">0.</span><span class="nb">and</span><span class="p">.</span><span class="n">jvline</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="n">jsym</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">cycle</span>
+<span class="k">      </span><span class="n">isym</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="w"></span>
 <span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jxuse</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">            </span><span class="n">x1</span><span class="o">=</span><span class="n">x</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="k">else</span>
@@ -1383,14 +1385,14 @@
 <span class="w">            </span><span class="k">call </span><span class="n">draw_</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="k">endif</span>
 <span class="k">         </span><span class="n">isym</span><span class="o">=</span><span class="n">isym</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
-<span class="mi">60</span><span class="w">    </span><span class="k">continue</span>
-<span class="mi">100</span><span class="w"> </span><span class="k">continue</span><span class="w"></span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">    enddo</span><span class="w"></span>
 <span class="c">!CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
 <span class="c">!     ADD LEGEND</span>
 <span class="c">!</span>
 <span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jlegnd</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">      if</span><span class="p">(</span><span class="n">debug</span><span class="p">)</span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;20) ADD LEGEND&#39;</span><span class="w"></span>
-<span class="w">      </span><span class="k">do </span><span class="mi">200</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nl</span><span class="w"></span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nl</span><span class="w"></span>
 <span class="w">         </span><span class="n">x1</span><span class="o">=</span><span class="n">xleg</span><span class="o">+</span><span class="n">csleg</span><span class="o">*</span><span class="mf">1.5</span><span class="w"></span>
 <span class="w">         </span><span class="n">y1</span><span class="o">=</span><span class="n">yleg</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">csleg</span><span class="o">*</span><span class="mf">1.5</span><span class="o">+</span><span class="n">csleg</span><span class="o">*</span><span class="mf">0.5</span><span class="w"></span>
 <span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jcol</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
@@ -1420,7 +1422,7 @@
 <span class="w">            </span><span class="k">endif</span>
 <span class="k">            call </span><span class="n">symbol_</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">csleg</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span><span class="mf">0.</span><span class="p">,</span><span class="n">nc</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="k">endif</span>
-<span class="mi">200</span><span class="w">   </span><span class="k">continue</span>
+<span class="k">      enddo</span>
 <span class="k">   endif</span><span class="w"></span>
 <span class="c">!CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
 <span class="c">!     FINISH UP</span>
@@ -1446,7 +1448,7 @@
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-04-14 14:51              </p>
+ on 2023-04-18 07:36              </p>
           </div>
         </div>
         <br>
