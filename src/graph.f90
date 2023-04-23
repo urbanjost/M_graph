@@ -1,7 +1,6 @@
 PROGRAM demo_graph
 use m_graph, only : graph, graph_init
 use M_draw
-!x!use M_msg,   only : str
 implicit none
 
 integer,PARAMETER            :: NUMLINES=3
