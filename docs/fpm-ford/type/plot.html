@@ -1,0 +1,509 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="generate basic XY plots">
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>plot &ndash; M_graph </title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">M_graph </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/namelists.html">Namelists</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>plot
+      <small>Derived Type</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="<p>100.0% of total for derived types.</p>Including implementation: 68 statements, 100.0% of total for derived types.">5 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/M_graph.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/m_graph.f90.html'>M_graph.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/m_graph.html'>m_graph</a></li>
+            <li class="breadcrumb-item active" aria-current="page">plot</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#boundprocs-0"
+         aria-expanded="false" aria-controls="boundprocs-0">
+         <h4 class="card-header bg-primary text-white">Type-Bound Procedures</h4>
+      </a>
+      <div id="boundprocs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../type/plot.html#boundprocedure-graph">graph</a>
+            <a class="list-group-item" href="../type/plot.html#boundprocedure-table">table</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../type/plot.html#src">plot</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2 id="type-def-statement">
+        type, public :: plot</h2>
+    
+    <br>
+
+    
+
+
+      <section>
+        <h2>Type-Bound Procedures</h2>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-graph"></span>
+      <h3>
+          procedure, public ::
+  <strong>graph</strong> => graph_one
+        
+      </h3>
+    </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private  subroutine graph_one(this, x, y)  
+</h3>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='plot.html'>plot</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong>(*)</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-table"></span>
+      <h3>
+          procedure, public ::
+  <strong>table</strong> => graph_table
+        
+      </h3>
+    </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private  subroutine graph_table(this, xx, yy)  
+</h3>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='plot.html'>plot</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xx</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>yy</strong>(:,:)</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+      </section>
+
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="hl codehilite"><pre><span></span><span class="k">type</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">plot</span><span class="w"></span>
+<span class="c">!     1  0&lt;.&lt;=NDP NUMBER OF POINTS PLOTTED [NDP]</span>
+<span class="c">!     2  0&lt;.&lt;=NDL NUMBER OF LINES PLOTTED [NDL]</span>
+
+<span class="c">!     3  -1/0/1   X AUTO SCALING: 0=AUTO,SMOOTH; 1=AUTO,NOSMOOTH; -1=USER</span>
+<span class="c">!     4  XMIN     USER SUPPLIED SCALE VALUE (USED IF F(3)&lt;0)</span>
+<span class="c">!     5  XMAX     USER SUPPLIED SCALE VALUE (USED IF F(3)&lt;0)</span>
+
+<span class="c">!     6  -1/0/1   Y AUTO SCALING: 0=AUTO,SMOOTH; 1=AUTO,NOSMOOTH; -1=USER</span>
+<span class="c">!     7  YMIN     USER SUPPLIED SCALE VALUE (USED IF F(6)&lt;0)</span>
+<span class="c">!     8  YMAX     USER SUPPLIED SCALE VALUE (USED IF F(6)&lt;0)</span>
+
+<span class="c">!     9  0/1      USE X VALUES WITH Y VALUES: 0=ONLY FIRST LINE OF</span>
+<span class="c">!                 X DATA USED FOR ALL Y LINES; 1=LINES OF X/Y USED</span>
+
+<span class="c">!     10 0/1      CONNECT PLOTTED POINTS: 0=YES; 1=NO</span>
+<span class="c">!     11 &gt;=0      SYMBOL PLOTTED EVERY ()TH POINT: 0=NO SYMBOLS</span>
+<span class="c">!     12 &gt;=0      SYMBOL SIZE [0.1]: 0=USE DEFAULT</span>
+<span class="c">!     13 &gt;=0      SYMBOL NUMBER FOR FIRST DATA LINE</span>
+
+<span class="c">!     14 -8&lt;.&lt;8   SHOW ERROR BARS: 0=NO ERROR BARS</span>
+<span class="c">!                 WHEN NON-ZERO, CHANGES INTERPRETATION OF LINES</span>
+<span class="c">!                 POINTS EVERY THIRD LINE ARE PLOTTED.  RELATIVE</span>
+<span class="c">!                 ERROR (UPPER,LOWER) ARE THE FOLLOWING TWO LINES.</span>
+<span class="c">!                 PLOTTED RELATIVE ERROR COMPUTED AS SUM OF FIRST</span>
+<span class="c">!                 LINE PLUS SECOND/THIRD.</span>
+<span class="c">!          &lt;0     AN X IS MADE AT THE CENTER POINT</span>
+<span class="c">!</span>
+<span class="c">!        ABS(.)  TYPE OF ERROR BAR</span>
+<span class="c">!        ------  ---------------------------------------------------</span>
+<span class="c">!          1   LINE CONNECTING 2ND/3RD RELATIVE ERRORS</span>
+<span class="c">!          2   1+HORIZONTAL BARS OF WIDTH EBAR AT 2ND/3RD REL ERR</span>
+<span class="c">!          3   1+VERTICAL BARS OF WIDTH EBAR AT 2ND/3RD REL ERR</span>
+<span class="c">!          4   2 LINES SPACED EBAR/2+HORIZONTAL BARS WIDTH=EBAR</span>
+<span class="c">!          5   2 LINES SPACED EBAR/2+VERTICAL BARS WIDTH=EBAR</span>
+<span class="c">!          6   VERTICAL RECTANGLE FROM 2ND/3RD WITH WIDTH=EBAR</span>
+<span class="c">!          7     RECTANGLE WITH CORNER AT 2ND/3RD REL ERROR</span>
+<span class="c">!</span>
+<span class="c">!     16 &gt;=0   ERROR BAR SIZE [0.1]: 0=DEFAULT USED</span>
+
+<span class="c">!     17 0/1   VERTICAL DRAWN LINE FROM POINT TO REFERENCE VALUE:</span>
+<span class="c">!           0=NO; 1=YES</span>
+<span class="c">!     18    REFERENCE VALUE</span>
+
+<span class="c">!     19 -1/0/1   X AXIS TYPE: 0=LINEAR; 1=LOG AXIS, -1=NO AXIS</span>
+<span class="c">!     20 -1/0/1   Y AXIS TYPE: 0=LINEAR; 1=LOG AXIS, -1=NO AXIS</span>
+<span class="c">!     21 &gt;=0      X AXIS LENGTH [7.0]: 0=DEFAULT USED</span>
+<span class="c">!     22 &gt;=0      Y AXIS LENGTH [5.0]: 0=DEFAULT USED</span>
+
+<span class="c">!     23 &gt;=0      X AXIS TICK PATTERN (SEE axisc_) [7.00]: 0=DEFAULT</span>
+<span class="c">!     24 &gt;=0      Y AXIS TICK PATTERN (SEE axisc_) [5.00]: 0=DEFAULT</span>
+
+<span class="c">!     25 0/1      X AXIS TITLE SIDE OF AXIS: 0=BELOW; 1=ABOVE</span>
+<span class="c">!     26 0/1      Y AXIS TITLE SIDE OF AXIS: 0=LEFT; 1=RIGHT</span>
+
+<span class="c">!     27 0/1      X AXIS AUTO EXPONENT ENABLE: 0=ENABLE; 1=DISABLE</span>
+<span class="c">!     28 0/1      Y AXIS AUTO EXPONENT ENABLE: 0=ENABLE; 1=DISABLE</span>
+
+<span class="c">!     29 0/1      X AXIS TICK SIDE: 0=BELOW; 1=ABOVE</span>
+<span class="c">!     30 0/1      Y AXIS TICK SIDE: 0=LEFT; 1=RIGHT</span>
+
+<span class="c">!     31 0/1      X AXIS NUMBERS ORIENTATION: 0=HORIZONTAL; 1=VERTICAL</span>
+<span class="c">!     32 0/1      Y AXIS NUMBERS ORIENTATION: 0=VERTICAL; 1=HORIZONTAL</span>
+
+<span class="c">!     33 0/1      X AXIS NUMBERS/TITLE SHOWN: 0=SHOWN; 1=NOT SHOWN</span>
+<span class="c">!     34 0/1      Y AXIS NUMBERS/TITLE SHOWN: 0=SHOWN; 1=NOT SHOWN</span>
+
+<span class="c">!     35 0/1      TAKE LOG10(ABS(X VALUES)+1.E-34): 0=NO; 1=YES</span>
+<span class="c">!     36 0/1      TAKE LOG10(ABS(Y VALUES)+1.E-34): 0=NO; 1=YES</span>
+
+<span class="c">!     37 -1/0/1   ADD MIRROR X AXIS: 0=NO; 1=WITH LABELS; -1:W/O LABELS</span>
+<span class="c">!     38 -1/0/1   ADD MIRROR Y AXIS: 0=NO; 1=WITH LABELS; -1:W/O LABELS</span>
+
+<span class="c">!     39 &gt;=0      X AXIS LABEL SIZE [0.15]: 0=USE DEFAULT</span>
+<span class="c">!     40 &gt;=0      Y AXIS LABEL SIZE [0.15]: 0=USE DEFAULT</span>
+
+<span class="c">!     41 &gt;=0      TOP TITLE CHARACTER SIZE [0.18]: 0=USE DEFAULT</span>
+
+<span class="c">!     42 0/1/2/3  GRID OPTION: 0=NO GRID; 1=SOLID; 2=DOTTED; 3=TICKED</span>
+
+<span class="c">!     43 -1/0/1   LINE/SYMBOL LEGEND: 0=NO LEGEND; 1=AUTO PLACE; -1=USER</span>
+<span class="c">!     44 X        USER SPECIFIED LOWER-LEFT CORNER OF LEGEND</span>
+<span class="c">!     45 Y        USER SPECIFIED LOWER-LEFT CORNER OF LEGEND</span>
+<span class="c">!     46 0/1      SHOW PLOT SYMBOL WITH LEGEND: 0=NO; 1=YES</span>
+<span class="c">!     47 0/1      SHOW LINE SEGMENT ON LEGEND: 0=NO; 1=YES</span>
+<span class="c">!     48 &gt;=0      LEGEND CHARACTER HEIGHT [0.12]: 0=USE DEFAULT</span>
+<span class="c">!     49 &gt;=0      LEGEND SEGMENT LENGTH [0.5]: 0=USE DEFAULT</span>
+
+<span class="c">!     50 -1/0/1   TOP TITLE JUSTIFY: 0=CENTER; -1:LEFT; 1:RIGHT</span>
+
+<span class="c">!     51 0/1      PLOT HORIZONTAL REFERENCE LINE: 0=NO; 1=YES</span>
+
+<span class="c">!     52 0/1      USE LINE TYPE ARRAY VALUES: 0=NO; 1=YES</span>
+
+<span class="c">!     53 0/1      USE COLOR ARRAY VALUES: 0=NO; 1=YES</span>
+<span class="c">!     54 &gt;=0      COLOR INDEX 1: 0=COLOR 1 USED</span>
+<span class="c">!     55 &gt;=0      LINETYPE INDEX 1</span>
+<span class="c">!     56 &gt;=0      COLOR INDEX 2: 0=COLOR 1 USED</span>
+<span class="c">!     57 &gt;=0      LINETYPE INDEX 2</span>
+<span class="c">!     ...         ... ETC ...</span>
+<span class="c">!</span>
+<span class="c">!     INDEX    COLOR USAGE        LINETYPE USAGE</span>
+<span class="c">!     -------  ------------       --------------</span>
+<span class="c">! 54    1      X AXIS              X AXIS</span>
+<span class="c">! 56    2      X AXIS NUMBERS      Y AXIS</span>
+<span class="c">! 58    3      X AXIS TITLE        TITLE</span>
+<span class="c">! 60    4      X AXIS EXPONENT     LEGEND TITLES</span>
+<span class="c">! 62    5      Y AXIS              ZERO REF LINETYPE</span>
+<span class="c">! 64    6      Y AXIS NUMBERS      ERROR BAR LINETYPES</span>
+<span class="c">! 66    7      Y AXIS TITLE LINE   1 LINETYPE</span>
+<span class="c">! 68    8      Y AXIS EXPONENT     ETC.</span>
+<span class="c">! 70    9      TITLE               ...</span>
+<span class="c">! 72   10      LEGEND TITLES       ...</span>
+<span class="c">! 74   11      ZERO REF LINE       ...</span>
+<span class="c">! 76   12      GRID COLOR          ...</span>
+<span class="c">! 78   13      LINE 1 COLOR        ...</span>
+<span class="c">!     ...      ... ETC.   ...      ...</span>
+<span class="c">!</span>
+<span class="k">contains</span>
+
+<span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">graph_one</span><span class="w"></span>
+<span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">graph_table</span><span class="w"></span>
+
+<span class="k">end type </span><span class="n">plot</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              M_graph
+ was developed by John S. Urban<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-07-11 00:38 +0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
