@@ -12,14 +12,29 @@
 
     <title>demo_graph &ndash; M_graph</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -77,21 +92,20 @@
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
-              <a data-bs-toggle="tooltip"
-                 data-bs-placement="bottom" data-html="true"
-                 title="28.1% of total for programs.">82 statements</a>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="59.9% of total for programs.">175 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/demo_graph.f90"> Source File</a>
+              <a href="../src/graph.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/demo_graph.f90.html'>demo_graph.f90</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/graph.f90.html'>graph.f90</a></li>
             <li class="breadcrumb-item active" aria-current="page">demo_graph</li>
           </ol>
         </nav>
@@ -99,9 +113,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -118,26 +134,42 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../program/demo_graph.html#variable-c">c</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-c">C</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-f">F</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-nc">NC</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-nf">NF</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-numlines">NUMLINES</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-numpts">NUMPTS</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-x">X</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-y">Y</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-device">device</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-f">f</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-filename">filename</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-error_bar_option">error_bar_option</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-error_bar_size">error_bar_size</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-fontname">fontname</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-grid">grid</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-h">h</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-i20">i20</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-i60">i60</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-i70">i70</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-indx">indx</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-ixsize">ixsize</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-iysize">iysize</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-nc">nc</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-ndl">ndl</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-ndp">ndp</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-nf">nf</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-numlines">numlines</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-numpts">numpts</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-value">value</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-status">status</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_connect">symbol_connect</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_nth">symbol_nth</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_size">symbol_size</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-symbol_start">symbol_start</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-t">t</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-top_title_size">top_title_size</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-view">view</a>
             <a class="list-group-item" href="../program/demo_graph.html#variable-w">w</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-x">x</a>
-            <a class="list-group-item" href="../program/demo_graph.html#variable-y">y</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_label_size">x_axis_label_size</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_length">x_axis_length</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-x_axis_number_orientation">x_axis_number_orientation</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_label_size">y_axis_label_size</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_length">y_axis_length</a>
+            <a class="list-group-item" href="../program/demo_graph.html#variable-y_axis_number_orientation">y_axis_number_orientation</a>
         </div>
       </div>
     </div>
@@ -152,14 +184,50 @@
   
   
   
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/demo_graph.html#proc-readargs">readargs</a>
+        </div>
+      </div>
+    </div>
+
   
   
   
   
   
   
-  
-  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#namelists-0"
+         aria-expanded="false" aria-controls="namelists-0">
+         <h4 class="card-header bg-primary text-white">Namelists</h4>
+      </a>
+      <div id="namelists-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~2">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~3">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~4">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~5">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~6">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~7">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~8">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~9">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~10">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~11">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~12">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~13">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~14">args</a>
+            <a class="list-group-item" href="../program/demo_graph.html#namelist-args~15">args</a>
+        </div>
+      </div>
+    </div>
+
     <div class="card card-primary">
       <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
       <div class="list-group">
@@ -179,16 +247,16 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item">M_draw</li>
                   <li class="list-inline-item"><a href='../module/m_graph.html'>m_graph</a></li>
+                  <li class="list-inline-item">M_draw</li>
               </ul>
             </li>
         </ul>
       </div>
     </div>
 
-    <p>call voutput(str(filename,&rsquo;_&rsquo;,int(a),&rsquo;x&rsquo;,int(b),&rsquo;.&rsquo;,device,sep=&rsquo;&lsquo;))</p>
-<br>
+    
+
 
     <section>
     <h2>Variables</h2>
@@ -211,7 +279,119 @@
               
             </td>
             <td>::</td>
-            <td><strong>c</strong>(numlines+3)</td>
+            <td><strong>C</strong>(NUMLINES+3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>F</strong>(NF)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nc"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>NC</strong>(NUMLINES+3)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nf"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>NF</strong></td>
+<td> =</td>
+                <td>255</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numlines"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>NUMLINES</strong></td>
+<td> =</td>
+                <td>3</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numpts"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>NUMPTS</strong></td>
+<td> =</td>
+                <td>25</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>X</strong>(NUMPTS)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Y</strong>(NUMPTS,NUMLINES)</td>
                 <td></td>
                 <td></td>
             <td>
@@ -236,14 +416,14 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-f"></span>
+              <span class="anchor" id="variable-error_bar_option"></span>
               real
             </td>
             <td>
               
             </td>
             <td>::</td>
-            <td><strong>f</strong>(nf)</td>
+            <td><strong>error_bar_option</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -252,16 +432,64 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-filename"></span>
-              character(len=:),
+              <span class="anchor" id="variable-error_bar_size"></span>
+              real
             </td>
             <td>
-              allocatable
+              
             </td>
             <td>::</td>
-            <td><strong>filename</strong></td>
+            <td><strong>error_bar_size</strong></td>
                 <td></td>
                 <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fontname"></span>
+              character(len=80)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fontname</strong></td>
+<td> =</td>
+                <td>&#39;roman&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-grid"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h"></span>
+              logical
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>h</strong></td>
+<td> =</td>
+                <td>.false.</td>
             <td>
                 
             </td>
@@ -316,22 +544,6 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-indx"></span>
-              integer
-            </td>
-            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>indx</strong></td>
-                <td></td>
-                <td></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
               <span class="anchor" id="variable-ixsize"></span>
               integer
             </td>
@@ -364,22 +576,6 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nc"></span>
-              integer
-            </td>
-            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>nc</strong>(numlines+3)</td>
-                <td></td>
-                <td></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
               <span class="anchor" id="variable-ndl"></span>
               integer
             </td>
@@ -391,7 +587,7 @@
                 <td></td>
                 <td></td>
             <td>
-                
+                <p>character(len=:),allocatable :: filename</p>
             </td>
         </tr>
         <tr>
@@ -412,64 +608,128 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nf"></span>
-              integer,
+              <span class="anchor" id="variable-status"></span>
+              character(len=:),
             </td>
             <td>
-parameter               
+              allocatable
             </td>
             <td>::</td>
-            <td><strong>nf</strong></td>
-<td> =</td>
-                <td>255</td>
+            <td><strong>status</strong></td>
+                <td></td>
+                <td></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-numlines"></span>
-              integer,
-            </td>
-            <td>
-parameter               
-            </td>
-            <td>::</td>
-            <td><strong>numlines</strong></td>
-<td> =</td>
-                <td>3</td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-numpts"></span>
-              integer,
-            </td>
-            <td>
-parameter               
-            </td>
-            <td>::</td>
-            <td><strong>numpts</strong></td>
-<td> =</td>
-                <td>25</td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-value"></span>
+              <span class="anchor" id="variable-symbol_connect"></span>
               real
             </td>
             <td>
               
             </td>
             <td>::</td>
-            <td><strong>value</strong></td>
+            <td><strong>symbol_connect</strong></td>
                 <td></td>
                 <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-symbol_nth"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>symbol_nth</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-symbol_size"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>symbol_size</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-symbol_start"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>symbol_start</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-t"></span>
+              character(len=80)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>t</strong></td>
+<td> =</td>
+                <td>&#39;title&#39;</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-top_title_size"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>top_title_size</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-view"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>view</strong>(3)</td>
+<td> =</td>
+                <td>[0.0, 0.0, 0.0]</td>
             <td>
                 
             </td>
@@ -492,14 +752,14 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-x"></span>
+              <span class="anchor" id="variable-x_axis_label_size"></span>
               real
             </td>
             <td>
               
             </td>
             <td>::</td>
-            <td><strong>x</strong>(numpts)</td>
+            <td><strong>x_axis_label_size</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -508,14 +768,78 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-y"></span>
+              <span class="anchor" id="variable-x_axis_length"></span>
               real
             </td>
             <td>
               
             </td>
             <td>::</td>
-            <td><strong>y</strong>(numpts,numlines)</td>
+            <td><strong>x_axis_length</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x_axis_number_orientation"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x_axis_number_orientation</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y_axis_label_size"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y_axis_label_size</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y_axis_length"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y_axis_length</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y_axis_number_orientation"></span>
+              real
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y_axis_number_orientation</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -534,106 +858,735 @@ parameter
     
 
 
+    <section>
+    <h2>Subroutines</h2>
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-readargs"></span> <h3> subroutine <a href='../proc/readargs.html'>readargs</a>(status)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>something where you could restrict nml output to just listed names would be nice
+write(<em>,nml=args)[&lsquo;A&rsquo;,&rsquo;H&rsquo;]
+write(</em>,nml=*NML)args[&lsquo;A&rsquo;,&rsquo;H&rsquo;]</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-status~2"></span>
+              character(len=:),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>status</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+    </section>    
     
+      <section>
+        <h2>Namelists</h2>
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args"></span>
+      <h3>Namelist <a href='../namelist/args.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-grid">
+      <td><a href="#variable-grid">grid</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~2"></span>
+      <h3>Namelist <a href='../namelist/args~2.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~2">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-symbol_connect">
+      <td><a href="#variable-symbol_connect">symbol_connect</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~3"></span>
+      <h3>Namelist <a href='../namelist/args~3.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~3">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-symbol_nth">
+      <td><a href="#variable-symbol_nth">symbol_nth</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~4"></span>
+      <h3>Namelist <a href='../namelist/args~4.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~4">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-symbol_size">
+      <td><a href="#variable-symbol_size">symbol_size</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~5"></span>
+      <h3>Namelist <a href='../namelist/args~5.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~5">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-symbol_start">
+      <td><a href="#variable-symbol_start">symbol_start</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~6"></span>
+      <h3>Namelist <a href='../namelist/args~6.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~6">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-error_bar_option">
+      <td><a href="#variable-error_bar_option">error_bar_option</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~7"></span>
+      <h3>Namelist <a href='../namelist/args~7.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~7">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-error_bar_size">
+      <td><a href="#variable-error_bar_size">error_bar_size</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~8"></span>
+      <h3>Namelist <a href='../namelist/args~8.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~8">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-x_axis_number_orientation">
+      <td><a href="#variable-x_axis_number_orientation">x_axis_number_orientation</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~9"></span>
+      <h3>Namelist <a href='../namelist/args~9.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~9">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-y_axis_number_orientation">
+      <td><a href="#variable-y_axis_number_orientation">y_axis_number_orientation</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~10"></span>
+      <h3>Namelist <a href='../namelist/args~10.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~10">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-x_axis_length">
+      <td><a href="#variable-x_axis_length">x_axis_length</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~11"></span>
+      <h3>Namelist <a href='../namelist/args~11.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~11">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-y_axis_length">
+      <td><a href="#variable-y_axis_length">y_axis_length</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~12"></span>
+      <h3>Namelist <a href='../namelist/args~12.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~12">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-x_axis_label_size">
+      <td><a href="#variable-x_axis_label_size">x_axis_label_size</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~13"></span>
+      <h3>Namelist <a href='../namelist/args~13.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~13">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-y_axis_label_size">
+      <td><a href="#variable-y_axis_label_size">y_axis_label_size</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~14"></span>
+      <h3>Namelist <a href='../namelist/args~14.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~14">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-top_title_size">
+      <td><a href="#variable-top_title_size">top_title_size</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="namelist-args~15"></span>
+      <h3>Namelist <a href='../namelist/args~15.html'>args</a></h3>
+    </div>
+    <div class="card-body">
+        
+  <br class="visible-xs visible-sm hidden-md">
+  <section>
+    <h2>Variables</h2>
+    <table class="table table-striped" id="namelist-args~15">
+      <thead><tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr></thead>
+      <tbody>
+              <tr id="variable-view">
+      <td><a href="#variable-view">view</a></td>
+      <td>real</td>
+      <td>[0.0, 0.0, 0.0]</td>
+      <td></td>
+    </tr>
+
+              <tr id="variable-t">
+      <td><a href="#variable-t">t</a></td>
+      <td>character(len=80)</td>
+      <td>&#39;title&#39;</td>
+      <td></td>
+    </tr>
+
+              <tr id="variable-h">
+      <td><a href="#variable-h">h</a></td>
+      <td>logical</td>
+      <td>.false.</td>
+      <td></td>
+    </tr>
+
+              <tr id="variable-fontname">
+      <td><a href="#variable-fontname">fontname</a></td>
+      <td>character(len=80)</td>
+      <td>&#39;roman&#39;</td>
+      <td></td>
+    </tr>
+
+              <tr id="variable-f">
+      <td><a href="#variable-f">F</a></td>
+      <td>real</td>
+      <td>None</td>
+      <td></td>
+    </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+    </div>
+  </div>
+
+      </section>
 
     <section>
     <h2 id="src">Source Code</h2>
-    <div class="hl codehilite"><pre><span></span><span class="w">     </span><span class="k">program </span><span class="n">demo_graph</span>
-<span class="w">     </span><span class="k">use </span><span class="n">m_graph</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="n">graph_init</span>
-<span class="w">     </span><span class="k">use </span><span class="n">M_draw</span>
-<span class="w">     </span><span class="k">implicit none</span>
+    <div class="hl codehilite"><pre><span></span><span class="k">PROGRAM </span><span class="n">demo_graph</span>
+<span class="k">use </span><span class="n">m_graph</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="n">graph_init</span>
+<span class="k">use </span><span class="n">M_draw</span>
+<span class="k">implicit none</span>
 
-<span class="k">     </span><span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">numlines</span><span class="o">=</span><span class="mi">3</span>
-<span class="w">     </span><span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">numpts</span><span class="o">=</span><span class="mi">25</span>
-<span class="w">     </span><span class="kt">integer</span><span class="p">,</span><span class="k">parameter</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">nf</span><span class="o">=</span><span class="mi">255</span>
-<span class="w">     </span><span class="kt">real</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">numpts</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="n">numpts</span><span class="p">,</span><span class="n">numlines</span><span class="p">)</span>
-<span class="w">     </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="n">numlines</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">     </span><span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">nc</span><span class="p">(</span><span class="n">numlines</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-<span class="w">     </span><span class="kt">real</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">nf</span><span class="p">)</span>
-<span class="w">     </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">device</span>
-<span class="w">     </span><span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">ixsize</span>
-<span class="w">     </span><span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">iysize</span>
-<span class="w">     </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">filename</span>
-<span class="w">     </span><span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">ndl</span><span class="p">,</span><span class="w"> </span><span class="n">ndp</span>
-<span class="w">     </span><span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">i20</span><span class="p">,</span><span class="w"> </span><span class="n">i70</span><span class="p">,</span><span class="w"> </span><span class="n">i60</span><span class="p">,</span><span class="w"> </span><span class="n">indx</span>
-<span class="w">     </span><span class="kt">real</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="k">value</span>
-<span class="k">        </span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;x11&#39;</span>
-<span class="w">        </span><span class="n">ixsize</span><span class="o">=</span><span class="mi">1200</span><span class="o">*</span><span class="p">.</span><span class="mi">75</span><span class="o">*</span><span class="mf">0.5</span>
-<span class="w">        </span><span class="n">iysize</span><span class="o">=</span><span class="mi">900</span><span class="o">*</span><span class="p">.</span><span class="mi">75</span><span class="o">*</span><span class="mf">0.5</span>
-<span class="w">        </span><span class="n">w</span><span class="o">=</span><span class="mi">40</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;x11&#39;</span><span class="p">)</span><span class="k">then</span>
-<span class="k">           call </span><span class="n">prefposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="w">           </span><span class="k">call </span><span class="n">prefsize</span><span class="p">(</span><span class="n">ixsize</span><span class="p">,</span><span class="n">iysize</span><span class="p">)</span>
-<span class="w">        </span><span class="k">else</span>
-<span class="k">           call </span><span class="n">prefsize</span><span class="p">(</span><span class="n">ixsize</span><span class="p">,</span><span class="n">iysize</span><span class="p">)</span>
-<span class="w">           </span><span class="c">!!call voutput(str(filename,&#39;_&#39;,int(a),&#39;x&#39;,int(b),&#39;.&#39;,device,sep=&#39;&#39;))</span>
-<span class="w">        </span><span class="k">endif</span>
-<span class="k">        call </span><span class="n">vinit</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="w">        </span><span class="k">call </span><span class="n">vsetflush</span><span class="p">(.</span><span class="n">false</span><span class="p">.)</span>
-<span class="w">        </span><span class="k">call </span><span class="n">vflush</span><span class="p">()</span>
-<span class="w">        </span><span class="k">call </span><span class="n">linewidth</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-
-<span class="w">     </span><span class="c">!     fill some arrays with data we can plot</span>
-<span class="w">        </span><span class="k">DO </span><span class="n">i20</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span>
-<span class="w">           </span><span class="n">X</span><span class="p">(</span><span class="n">i20</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span>
-<span class="w">           </span><span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mf">5.0</span>
-<span class="w">           </span><span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span><span class="o">*</span><span class="mi">2</span><span class="mf">0.0</span>
-<span class="w">           </span><span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">i20</span><span class="o">/</span><span class="mf">4.0</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
-<span class="w">        </span><span class="k">enddo</span>
-
-<span class="k">        </span><span class="n">f</span><span class="o">=</span><span class="mf">0.0</span><span class="w"> </span><span class="c">!     zero out option array</span>
-<span class="w">     </span><span class="c">!     set up color and linetype in option array</span>
-<span class="w">        </span><span class="k">do </span><span class="n">i70</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span><span class="n">nf</span><span class="p">,</span><span class="mi">2</span>
-<span class="w">           </span><span class="n">f</span><span class="p">(</span><span class="n">i70</span><span class="p">)</span><span class="o">=</span><span class="nb">mod</span><span class="p">(</span><span class="n">i70</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="w">           </span><span class="n">f</span><span class="p">(</span><span class="n">i70</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="nb">mod</span><span class="p">(</span><span class="n">i70</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="w">        </span><span class="k">enddo</span>
-<span class="k">        </span><span class="n">f</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span>
-<span class="w">        </span><span class="n">f</span><span class="p">(</span><span class="mi">53</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span>
-
-<span class="w">        </span><span class="n">ndp</span><span class="o">=</span><span class="n">numpts</span><span class="c">! number of data points per line</span>
-<span class="w">        </span><span class="n">ndl</span><span class="o">=</span><span class="mi">3</span><span class="w">     </span><span class="c">! number of data lines</span>
-<span class="w">        </span><span class="c">!c        ! array of strings dimensioned c(3+numpts)</span>
-<span class="w">        </span><span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;X-AXIS&#39;</span><span class="w">  </span><span class="c">!  c(1) : x axis title</span>
-<span class="w">        </span><span class="n">c</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;Y-AXIS&#39;</span><span class="w">  </span><span class="c">!  c(2) : y axis title</span>
-<span class="w">        </span><span class="n">c</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;TITLE&#39;</span><span class="w">  </span><span class="c">!  c(3) : top title</span>
-<span class="w">        </span><span class="n">c</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 1&#39;</span><span class="w">  </span><span class="c">!  c(n) : line N-3 legend (optionally used)</span>
-<span class="w">        </span><span class="n">c</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 2&#39;</span><span class="w">  </span><span class="c">!  c(n) : line N-3 legend (optionally used)</span>
-<span class="w">        </span><span class="n">c</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 3&#39;</span><span class="w">  </span><span class="c">!  c(n) : line N-3 legend (optionally used)</span>
-<span class="w">        </span><span class="c">!nc       ! array of string lengths in c() dimensioned nc(3+numpts)</span>
-<span class="w">        </span><span class="k">do </span><span class="n">i60</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span>
-<span class="w">           </span><span class="n">nc</span><span class="p">(</span><span class="n">i60</span><span class="p">)</span><span class="o">=</span><span class="nb">len_trim</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">i60</span><span class="p">))</span>
-<span class="w">        </span><span class="k">enddo</span>
-<span class="w">        </span><span class="c">!f(39)= 0.25</span>
-<span class="w">        </span><span class="c">!f(40)= 0.25</span>
-<span class="w">        </span><span class="c">!f(42)= 3.00</span>
-<span class="w">        </span><span class="c">!f(43)=-1.00</span>
-<span class="w">     </span><span class="c">!  initialize graphics</span>
-<span class="w">        </span><span class="k">call </span><span class="n">graph_init</span><span class="p">(</span><span class="mi">1</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span><span class="mf">1.00</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span>
-<span class="w">        </span><span class="n">INFINITE</span><span class="p">:</span><span class="w"> </span><span class="k">do</span>
-<span class="k">           CALL </span><span class="n">graph</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">NDP</span><span class="p">,</span><span class="n">NDL</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">NC</span><span class="p">)</span>
-<span class="w">           </span><span class="k">call </span><span class="n">vflush</span><span class="p">()</span>
-<span class="w">     </span><span class="mi">888</span><span class="w">   </span><span class="k">continue</span>
-<span class="k">           write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;Enter index and value for graph(3f) option array:&#39;</span>
-<span class="w">           </span><span class="k">read</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="k">end</span><span class="o">=</span><span class="mi">999</span><span class="p">,</span><span class="n">err</span><span class="o">=</span><span class="mi">888</span><span class="p">)</span><span class="n">indx</span><span class="p">,</span><span class="k">value</span>
-<span class="k">           if</span><span class="p">(</span><span class="n">indx</span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span><span class="k">then</span>
-<span class="k">              exit </span><span class="n">INFINITE</span>
-<span class="w">           </span><span class="k">elseif</span><span class="p">(</span><span class="n">indx</span><span class="p">.</span><span class="n">gt</span><span class="p">.</span><span class="n">nf</span><span class="p">)</span><span class="k">then</span>
-<span class="k">              goto</span><span class="w"> </span><span class="mi">888</span>
-<span class="w">           </span><span class="k">else</span>
-<span class="k">              </span><span class="n">f</span><span class="p">(</span><span class="n">indx</span><span class="p">)</span><span class="o">=</span><span class="k">value</span>
-<span class="k">              write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;indx &#39;</span><span class="p">,</span><span class="n">indx</span><span class="p">,</span><span class="s1">&#39; now &#39;</span><span class="p">,</span><span class="k">value</span>
-<span class="k">           endif</span>
-<span class="k">           call </span><span class="n">vflush</span><span class="p">()</span><span class="w">              </span><span class="c">! flush graphics buffers</span>
-<span class="w">           </span><span class="k">call </span><span class="n">color</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="w">           </span><span class="k">call </span><span class="n">clear</span><span class="p">()</span>
-<span class="w">           </span><span class="k">call </span><span class="n">color</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="w">           </span><span class="k">call </span><span class="n">vflush</span><span class="p">()</span><span class="w">              </span><span class="c">! flush graphics buffers</span>
-<span class="w">        </span><span class="k">enddo </span><span class="n">INFINITE</span>
-<span class="w">     </span><span class="mi">999</span><span class="w"> </span><span class="k">continue</span>
-<span class="k">        call </span><span class="n">vflush</span><span class="p">()</span><span class="w">              </span><span class="c">! flush graphics buffers</span>
-<span class="w">        </span><span class="k">call </span><span class="n">vexit</span><span class="p">()</span><span class="w">               </span><span class="c">! close up plot package</span>
-<span class="w">        </span><span class="k">stop</span>
-<span class="k">     end program </span><span class="n">demo_graph</span>
+<span class="kt">integer</span><span class="p">,</span><span class="k">PARAMETER</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">NUMLINES</span><span class="o">=</span><span class="mi">3</span>
+<span class="kt">integer</span><span class="p">,</span><span class="k">PARAMETER</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">NUMPTS</span><span class="o">=</span><span class="mi">25</span>
+<span class="kt">integer</span><span class="p">,</span><span class="k">PARAMETER</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">NF</span><span class="o">=</span><span class="mi">255</span>
+<span class="kt">REAL</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">X</span><span class="p">(</span><span class="n">NUMPTS</span><span class="p">),</span><span class="n">Y</span><span class="p">(</span><span class="n">NUMPTS</span><span class="p">,</span><span class="n">NUMLINES</span><span class="p">)</span>
+<span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">C</span><span class="p">(</span><span class="n">NUMLINES</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="kt">INTEGER</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">NC</span><span class="p">(</span><span class="n">NUMLINES</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="kt">REAL</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">F</span><span class="p">(</span><span class="n">NF</span><span class="p">)</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">device</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">ixsize</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">iysize</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">i20</span><span class="p">,</span><span class="w"> </span><span class="n">i60</span><span class="p">,</span><span class="w"> </span><span class="n">i70</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">ndp</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">ndl</span>
+<span class="c">!!character(len=:),allocatable :: filename</span>
+<span class="kt">integer</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">w</span>
+<span class="c">! create a NAMELIST group with lots of options</span>
+<span class="kt">real</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">]</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">t</span><span class="o">=</span><span class="s1">&#39;title&#39;</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;roman&#39;</span>
+<span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">grid</span><span class="w">                       </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span><span class="n">grid</span><span class="p">)</span><span class="w">                       </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">grid</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">symbol_connect</span><span class="w">             </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">symbol_connect</span><span class="p">)</span><span class="w">             </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_connect</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">symbol_nth</span><span class="w">                 </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="n">symbol_nth</span><span class="p">)</span><span class="w">                 </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_nth</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">symbol_size</span><span class="w">                </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">12</span><span class="p">),</span><span class="n">symbol_size</span><span class="p">)</span><span class="w">                </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_size</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">symbol_start</span><span class="w">               </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span><span class="n">symbol_start</span><span class="p">)</span><span class="w">               </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">symbol_start</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">error_bar_option</span><span class="w">           </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span><span class="n">error_bar_option</span><span class="p">)</span><span class="w">           </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">error_bar_option</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">error_bar_size</span><span class="w">             </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span><span class="n">error_bar_size</span><span class="p">)</span><span class="w">             </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">error_bar_size</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">x_axis_number_orientation</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">31</span><span class="p">),</span><span class="n">x_axis_number_orientation</span><span class="p">)</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">x_axis_number_orientation</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">y_axis_number_orientation</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="n">y_axis_number_orientation</span><span class="p">)</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">y_axis_number_orientation</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">x_axis_length</span><span class="w">              </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">21</span><span class="p">),</span><span class="n">x_axis_length</span><span class="p">)</span><span class="w">              </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">x_axis_length</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">y_axis_length</span><span class="w">              </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span><span class="n">y_axis_length</span><span class="p">)</span><span class="w">              </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">y_axis_length</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">x_axis_label_size</span><span class="w">          </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">39</span><span class="p">),</span><span class="n">x_axis_label_size</span><span class="p">)</span><span class="w">          </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">x_axis_label_size</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">y_axis_label_size</span><span class="w">          </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span><span class="n">y_axis_label_size</span><span class="p">)</span><span class="w">          </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">y_axis_label_size</span>
+<span class="kt">real</span><span class="w">  </span><span class="kd">::</span><span class="w">  </span><span class="n">top_title_size</span><span class="w">             </span><span class="p">;</span><span class="w">  </span><span class="k">equivalence</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">41</span><span class="p">),</span><span class="n">top_title_size</span><span class="p">)</span><span class="w">             </span><span class="p">;</span><span class="w">  </span><span class="k">namelist</span><span class="w">  </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="n">top_title_size</span>
+<span class="k">namelist</span><span class="w"> </span><span class="o">/</span><span class="n">args</span><span class="o">/</span><span class="w"> </span><span class="n">view</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">fontname</span><span class="p">,</span><span class="n">f</span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">status</span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">   </span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;x11&#39;</span>
+<span class="w">   </span><span class="n">ixsize</span><span class="o">=</span><span class="mi">1200</span><span class="o">*</span><span class="p">.</span><span class="mi">75</span>
+<span class="w">   </span><span class="n">iysize</span><span class="o">=</span><span class="mi">900</span><span class="o">*</span><span class="p">.</span><span class="mi">75</span>
+<span class="w">   </span><span class="n">w</span><span class="o">=</span><span class="mi">40</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">device</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;x11&#39;</span><span class="p">)</span><span class="k">then</span>
+<span class="k">      call </span><span class="n">prefposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">prefsize</span><span class="p">(</span><span class="n">ixsize</span><span class="p">,</span><span class="n">iysize</span><span class="p">)</span>
+<span class="w">   </span><span class="k">else</span>
+<span class="k">      call </span><span class="n">prefsize</span><span class="p">(</span><span class="n">ixsize</span><span class="p">,</span><span class="n">iysize</span><span class="p">)</span>
+<span class="w">      </span><span class="c">!x!call voutput(str(filename,&#39;_&#39;,int(a),&#39;x&#39;,int(b),&#39;.&#39;,device,sep=&#39;&#39;))</span>
+<span class="w">   </span><span class="k">endif</span>
+<span class="k">   call </span><span class="n">vinit</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">vsetflush</span><span class="p">(.</span><span class="n">false</span><span class="p">.)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">vflush</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">linewidth</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+<span class="c">!     FILL SOME ARRAYS WITH DATA WE CAN PLOT</span>
+<span class="w">   </span><span class="k">DO </span><span class="n">i20</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span>
+<span class="w">      </span><span class="n">X</span><span class="p">(</span><span class="n">i20</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span>
+<span class="w">      </span><span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mf">5.0</span>
+<span class="w">      </span><span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">i20</span><span class="o">*</span><span class="mi">2</span><span class="mf">0.0</span>
+<span class="w">      </span><span class="n">Y</span><span class="p">(</span><span class="n">i20</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">i20</span><span class="o">/</span><span class="mf">4.0</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="w">   </span><span class="k">enddo</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">   </span><span class="n">f</span><span class="o">=</span><span class="mf">0.0</span><span class="w"> </span><span class="c">!     ZERO OUT OPTION ARRAY</span>
+<span class="c">!     SET UP COLOR AND LINETYPE IN OPTION ARRAY</span>
+<span class="w">   </span><span class="k">DO </span><span class="n">I70</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span><span class="n">NF</span><span class="p">,</span><span class="mi">2</span>
+<span class="w">      </span><span class="n">F</span><span class="p">(</span><span class="n">I70</span><span class="p">)</span><span class="o">=</span><span class="nb">mod</span><span class="p">(</span><span class="n">i70</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="n">F</span><span class="p">(</span><span class="n">I70</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="nb">mod</span><span class="p">(</span><span class="n">i70</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">   </span><span class="k">enddo</span>
+<span class="k">   </span><span class="n">f</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span>
+<span class="w">   </span><span class="n">f</span><span class="p">(</span><span class="mi">53</span><span class="p">)</span><span class="o">=</span><span class="mi">1</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+<span class="w">   </span><span class="n">NDP</span><span class="o">=</span><span class="n">NUMPTS</span><span class="c">! number of data points per line</span>
+<span class="w">   </span><span class="n">NDL</span><span class="o">=</span><span class="mi">3</span><span class="w">     </span><span class="c">! number of data lines</span>
+<span class="w">   </span><span class="c">!C        ! array of strings dimensioned C(3+NUMPTS)</span>
+<span class="w">   </span><span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;X-AXIS&#39;</span><span class="w">  </span><span class="c">!  c(1) : x axis title</span>
+<span class="w">   </span><span class="n">C</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;Y-AXIS&#39;</span><span class="w">  </span><span class="c">!  c(2) : y axis title</span>
+<span class="w">   </span><span class="n">C</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;TITLE&#39;</span><span class="w">  </span><span class="c">!  c(3) : top title</span>
+<span class="w">   </span><span class="n">C</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 1&#39;</span><span class="w">  </span><span class="c">!  c(n) : line N-3 legend (optionally used)</span>
+<span class="w">   </span><span class="n">C</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 2&#39;</span><span class="w">  </span><span class="c">!  c(n) : line N-3 legend (optionally used)</span>
+<span class="w">   </span><span class="n">C</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">=</span><span class="s1">&#39;LABEL 3&#39;</span><span class="w">  </span><span class="c">!  c(n) : line N-3 legend (optionally used)</span>
+<span class="w">   </span><span class="c">!NC       ! array of string lengths in c() dimensioned nc(3+NUMPTS)</span>
+<span class="w">   </span><span class="k">DO </span><span class="n">I60</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span>
+<span class="w">      </span><span class="n">NC</span><span class="p">(</span><span class="n">I60</span><span class="p">)</span><span class="o">=</span><span class="nb">LEN_TRIM</span><span class="p">(</span><span class="n">C</span><span class="p">(</span><span class="n">I60</span><span class="p">))</span>
+<span class="w">   </span><span class="k">enddo</span>
+<span class="w">   </span><span class="c">!f(39)= 0.25</span>
+<span class="w">   </span><span class="c">!f(40)= 0.25</span>
+<span class="w">   </span><span class="c">!f(42)= 3.00</span>
+<span class="w">   </span><span class="c">!f(43)=-1.00</span>
+<span class="c">!-----------------------------------------------------------------------</span>
+<span class="c">!  INITIALIZE GRAPHICS</span>
+<span class="w">   </span><span class="k">call </span><span class="n">graph_init</span><span class="p">(</span><span class="mi">1</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span><span class="mf">1.00</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span>
+<span class="w">   </span><span class="n">INFINITE</span><span class="p">:</span><span class="w"> </span><span class="k">do</span>
+<span class="k">      CALL </span><span class="n">graph</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">NDP</span><span class="p">,</span><span class="n">NDL</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">NC</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">vflush</span><span class="p">()</span>
+<span class="mi">888</span><span class="w">   </span><span class="k">continue</span>
+<span class="k">      call </span><span class="n">readargs</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="c">! interactively change NAMELIST group</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">      call </span><span class="n">vflush</span><span class="p">()</span><span class="w">              </span><span class="c">! flush graphics buffers</span>
+<span class="w">      </span><span class="k">call </span><span class="n">color</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">clear</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">color</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">vflush</span><span class="p">()</span><span class="w">              </span><span class="c">! flush graphics buffers</span>
+<span class="w">   </span><span class="k">enddo </span><span class="n">INFINITE</span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="mi">999</span><span class="w"> </span><span class="k">continue</span>
+<span class="k">   call </span><span class="n">vflush</span><span class="p">()</span><span class="w">              </span><span class="c">! flush graphics buffers</span>
+<span class="w">   </span><span class="k">call </span><span class="n">vexit</span><span class="p">()</span><span class="w">               </span><span class="c">! close up plot package</span>
+<span class="k">contains</span>
+<span class="k">   subroutine </span><span class="n">readargs</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">status</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">line</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">answer</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">lun</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">ios</span>
+<span class="w">      </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="s1">&#39;args&gt;&gt; &quot;.&quot; to run, &quot;stop&quot; to end, &quot;show&quot; to show keywords&#39;</span>
+<span class="w">      </span><span class="k">do</span>
+<span class="k">         write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="s1">&#39;args&gt;&gt;&#39;</span>
+<span class="w">         </span><span class="k">read</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="n">line</span>
+<span class="w">         </span><span class="k">if</span><span class="p">(</span><span class="n">line</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;!&#39;</span><span class="p">)</span><span class="k">cycle</span>
+<span class="k">         select case</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="k">exit</span>
+<span class="k">          case</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;SO FAR&#39;</span>
+<span class="w">            </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="n">nml</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+<span class="w">            </span><span class="c">!! something where you could restrict nml output to just listed names would be nice</span>
+<span class="w">            </span><span class="c">!!write(*,nml=args)[&#39;A&#39;,&#39;H&#39;]</span>
+<span class="w">            </span><span class="c">!!write(*,nml=*NML)args[&#39;A&#39;,&#39;H&#39;]</span>
+<span class="w">          </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;sh&#39;</span><span class="p">)</span>
+<span class="w">             </span><span class="k">call </span><span class="nb">execute_command_line</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;read&#39;</span><span class="p">)</span>
+<span class="w">             </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="s1">&#39;filename:&#39;</span>
+<span class="w">             </span><span class="k">read</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="n">answer</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">answer</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">lun</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             read</span><span class="p">(</span><span class="n">lun</span><span class="p">,</span><span class="n">args</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+<span class="w">             </span><span class="k">close</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">lun</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="p">(</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;stop&#39;</span>
+<span class="w">            </span><span class="k">exit</span>
+<span class="k">          case</span><span class="p">(</span><span class="s1">&#39;write&#39;</span><span class="p">)</span>
+<span class="w">             </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">)</span><span class="s1">&#39;filename:&#39;</span>
+<span class="w">             </span><span class="k">read</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="n">answer</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             open</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">answer</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="n">newunit</span><span class="o">=</span><span class="n">lun</span><span class="p">)</span>
+<span class="w">             </span><span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">exit</span>
+<span class="k">             write</span><span class="p">(</span><span class="n">lun</span><span class="p">,</span><span class="n">args</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+<span class="w">             </span><span class="k">close</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">lun</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case </span><span class="n">default</span>
+<span class="w">            </span><span class="n">UPDATE</span><span class="p">:</span><span class="w"> </span><span class="k">block</span>
+<span class="k">               </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">intmp</span>
+<span class="w">               </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">message</span>
+<span class="w">               </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ios</span>
+<span class="w">               </span><span class="n">intmp</span><span class="o">=</span><span class="s1">&#39;&amp;ARGS &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;/&#39;</span>
+<span class="w">               </span><span class="k">read</span><span class="p">(</span><span class="n">intmp</span><span class="p">,</span><span class="n">nml</span><span class="o">=</span><span class="n">args</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">,</span><span class="n">iomsg</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
+<span class="w">               </span><span class="k">if</span><span class="p">(</span><span class="n">ios</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">                  write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s1">&#39;ERROR:&#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="w">               </span><span class="k">endif</span>
+<span class="k">            endblock </span><span class="n">UPDATE</span>
+<span class="w">         </span><span class="k">end select</span>
+<span class="k">      enddo</span>
+<span class="k">   end subroutine </span><span class="n">readargs</span>
+<span class="k">end program </span><span class="n">demo_graph</span>
 </pre></div>
 
     </section>
@@ -646,40 +1599,21 @@ parameter
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>M_graph was developed by John S. Urban<br>&copy; 2024 
+          <div class="col">
+            <p>
+              M_graph
+ was developed by John S. Urban<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-30 00:10              </p>
+ on 2025-07-11 00:31 +0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>
